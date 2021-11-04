@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>ricofx47&#39;s blog</title>
+  <icon>https://ricofx47.cc/icon.png</icon>
+  <subtitle>ricofx47 blog</subtitle>
+  <link href="https://ricofx47.cc/atom.xml" rel="self"/>
+  
+  <link href="https://ricofx47.cc/"/>
+  <updated>2021-11-04T06:40:00.437Z</updated>
+  <id>https://ricofx47.cc/</id>
+  
+  <author>
+    <name>ricofx47</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>拉格朗日插值入门</title>
+    <link href="https://ricofx47.cc/2021/11/04/Lagrange/"/>
+    <id>https://ricofx47.cc/2021/11/04/Lagrange/</id>
+    <published>2021-11-04T06:36:24.000Z</published>
+    <updated>2021-11-04T06:40:00.437Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;其实是多年前写的一篇笔记了，做测试文章。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="数学" scheme="https://ricofx47.cc/categories/%E6%95%B0%E5%AD%A6/"/>
+    
+    
+    <category term="数学" scheme="https://ricofx47.cc/tags/%E6%95%B0%E5%AD%A6/"/>
+    
+    <category term="多项式" scheme="https://ricofx47.cc/tags/%E5%A4%9A%E9%A1%B9%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="https://ricofx47.cc/2021/11/03/hello-world/"/>
+    <id>https://ricofx47.cc/2021/11/03/hello-world/</id>
+    <published>2021-11-03T11:40:50.943Z</published>
+    <updated>2021-11-03T13:04:21.583Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;</summary>
+    
+    
+    
+    
+  </entry>
+  
+</feed>
