@@ -6,7 +6,7 @@
   <link href="https://ricofx47.cc/atom.xml" rel="self"/>
   
   <link href="https://ricofx47.cc/"/>
-  <updated>2021-11-04T06:40:00.437Z</updated>
+  <updated>2021-12-25T14:10:06.180Z</updated>
   <id>https://ricofx47.cc/</id>
   
   <author>
@@ -17,11 +17,30 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>高考题面背后的故事</title>
+    <link href="https://ricofx47.cc/2021/12/25/xgk2/"/>
+    <id>https://ricofx47.cc/2021/12/25/xgk2/</id>
+    <published>2021-12-25T13:33:25.000Z</published>
+    <updated>2021-12-25T14:10:06.180Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;做到过这样一道题&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="数学" scheme="https://ricofx47.cc/categories/%E6%95%B0%E5%AD%A6/"/>
+    
+    
+    <category term="数学" scheme="https://ricofx47.cc/tags/%E6%95%B0%E5%AD%A6/"/>
+    
+  </entry>
+  
+  <entry>
     <title>拉格朗日插值入门</title>
     <link href="https://ricofx47.cc/2021/11/04/Lagrange/"/>
     <id>https://ricofx47.cc/2021/11/04/Lagrange/</id>
     <published>2021-11-04T06:36:24.000Z</published>
-    <updated>2021-11-04T06:40:00.437Z</updated>
+    <updated>2021-12-25T13:22:22.930Z</updated>
     
     
     <summary type="html">&lt;p&gt;其实是多年前写的一篇笔记了，做测试文章。&lt;/p&gt;</summary>
@@ -41,8 +60,8 @@
     <title>Hello World</title>
     <link href="https://ricofx47.cc/2021/11/03/hello-world/"/>
     <id>https://ricofx47.cc/2021/11/03/hello-world/</id>
-    <published>2021-11-03T11:40:50.943Z</published>
-    <updated>2021-11-03T13:04:21.583Z</updated>
+    <published>2021-11-03T06:36:24.000Z</published>
+    <updated>2021-12-25T13:17:00.041Z</updated>
     
     
     <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;</summary>
