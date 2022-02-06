@@ -61,7 +61,7 @@
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
-      <strong>ricofx47</strong>
+      <strong>ricofx</strong>
     </a>
 
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
@@ -186,6 +186,58 @@
               <div class="col-12 col-md-10 m-auto">
                 
 
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2022/02/06/%E8%89%B0%E9%9A%BE%E7%9A%84Typecho2Hexo/" target="_self">
+          艰难的Typecho2Hexo
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2022/02/06/%E8%89%B0%E9%9A%BE%E7%9A%84Typecho2Hexo/" target="_self">
+          
+          
+            
+          
+          闲来无事，打算把以前在 typecho 的文章，迁移这个博客上面来。于是就有了以下痛苦无聊的过程，现将其记录于此。
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-02-06 22:13" pubdate>
+              2022-02-06
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/%E6%8A%98%E8%85%BE/">折腾</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/linux/">linux</a>
+            
+              <a href="/tags/hexo/">hexo</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
 
   <div class="row mx-auto index-card">
     
@@ -325,7 +377,358 @@
     </article>
   </div>
 
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2020/11/12/C%E3%80%81D%E9%A2%98%E8%A7%A3%E8%A7%A3%E6%9E%90/" target="_self">
+          C、D题解解析
+        </a>
+      </h1>
 
+      <p class="index-excerpt">
+        <a href="/2020/11/12/C%E3%80%81D%E9%A2%98%E8%A7%A3%E8%A7%A3%E6%9E%90/" target="_self">
+          
+          
+            
+          
+          
+首先本人并不会做这两道题，以下只是对题解的理解
+
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-11-12 20:25" pubdate>
+              2020-11-12
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/%E6%B5%8B%E8%AF%95/">测试</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E6%95%B0%E5%AD%A6/">数学</a>
+            
+              <a href="/tags/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/">组合数学</a>
+            
+              <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">动态规划</a>
+            
+              <a href="/tags/%E5%AE%B9%E6%96%A5%E5%8E%9F%E7%90%86/">容斥原理</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2020/11/11/%E3%80%8CNOIP2017%E3%80%8D%E5%88%97%E9%98%9F_%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" target="_self">
+          「NOIP2017」列队 数据结构
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2020/11/11/%E3%80%8CNOIP2017%E3%80%8D%E5%88%97%E9%98%9F_%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" target="_self">
+          
+          
+            
+          
+          
+「NOIP2017」列队
+
+这题做法比较多，感觉平衡树的写法应该比较简单。
+虽然常数会比较大。
+我们分别维护每一行和最后一列的元素。
+对于每次操作的二元组\((x,y)\)
+
+如果\(y=m\)，就把元素移到列末尾。
+否则，行内删除该元素，把最后一列第\(x\)个元素移到行末尾并删除，之后把\((x,y)\)移动到列末尾。
+
+查询很简单，查一下第\(k\)大的编号就是了。
+但是有一个问题，这样开
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-11-11 18:31" pubdate>
+              2020-11-11
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/%E9%A2%98%E8%A7%A3/">题解</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/">线段树</a>
+            
+              <a href="/tags/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/">树状数组</a>
+            
+              <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>
+            
+              <a href="/tags/%E5%B9%B3%E8%A1%A1%E6%A0%91/">平衡树</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2020/11/11/%E9%80%89%E6%95%B0_%E5%AE%B9%E6%96%A5%E5%8E%9F%E7%90%86/" target="_self">
+          选数 容斥原理
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2020/11/11/%E9%80%89%E6%95%B0_%E5%AE%B9%E6%96%A5%E5%8E%9F%E7%90%86/" target="_self">
+          
+          
+            
+          
+          题目
+桌面上有\(N\)个数字排成一排，小武要求小林从中选出\(3\)个数字，使得这\(3\)个数字的按位或的结果恰好等于\(x\)，小林很快 就解决了这个问题，小武想了想，决定把问题加强一下，小武会问小林\(Q\)次问题，每次选的\(3\)个数字只能在从左往右 的第\(l\)个数和第\(r\)个数之间选择，并且要小林说出符合要求的方案数，小林顿时不会了，于是把问题交给了你。 第一行两个数\(N\
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-11-11 17:34" pubdate>
+              2020-11-11
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/%E9%A2%98%E8%A7%A3/">题解</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E6%95%B0%E5%AD%A6/">数学</a>
+            
+              <a href="/tags/%E5%AE%B9%E6%96%A5%E5%8E%9F%E7%90%86/">容斥原理</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2020/11/11/%E3%80%8CNOIP2017%E3%80%8D%E5%AE%9D%E8%97%8F/" target="_self">
+          「NOIP2017」宝藏
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2020/11/11/%E3%80%8CNOIP2017%E3%80%8D%E5%AE%9D%E8%97%8F/" target="_self">
+          
+          
+            
+          
+          
+「NOIP2017」宝藏
+
+不知道为什么，最开始\(70\)的暴力都没有想到。
+因为当前在某个最新开发的点，不会再往以前已经开发的点连边。
+所以开发顺序是一个排列，所以直接全排列枚举开发顺序。
+每个新开发的点，都枚举是从哪个已开发的点过来的，这样做应该是\(\mathcal{O}(n^3n!)\)的，可以拿\(70\)分。
+然后这题有一个根据定义的状压\(dp\)，可以把开发顺序看成一棵\(bf
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-11-11 07:46" pubdate>
+              2020-11-11
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/%E9%A2%98%E8%A7%A3/">题解</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">动态规划</a>
+            
+              <a href="/tags/%E7%8A%B6%E5%8E%8Bdp/">状压dp</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2020/11/10/YJYX_Ak_king_!/" target="_self">
+          YJYX Ak king !
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2020/11/10/YJYX_Ak_king_!/" target="_self">
+          
+          
+            
+          
+          由于我的博客被太多人膜拜变得极不稳定，因此写在这个菜鸡的博客上
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-11-10 21:41" pubdate>
+              2020-11-10
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/%E9%9A%8F%E7%AC%94/">随笔</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E5%85%B6%E4%BB%96/">其他</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2020/11/10/%E3%80%8CHAOI2016%E3%80%8D%E6%94%BE%E6%A3%8B%E5%AD%90/" target="_self">
+          「HAOI2016」放棋子
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2020/11/10/%E3%80%8CHAOI2016%E3%80%8D%E6%94%BE%E6%A3%8B%E5%AD%90/" target="_self">
+          
+          
+            
+          
+          
+「HAOI2016」放棋子
+
+这题，一看就很状压\(dp\)
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-11-10 21:28" pubdate>
+              2020-11-10
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/%E9%A2%98%E8%A7%A3/">题解</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E6%95%B0%E5%AD%A6/">数学</a>
+            
+              <a href="/tags/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/">组合数学</a>
+            
+              <a href="/tags/%E9%94%99%E6%8E%92/">错排</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+
+
+  <nav aria-label="navigation">
+    <span class="pagination" id="pagination">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/#board">2</a><a class="page-number" href="/page/3/#board">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/#board">12</a><a class="extend next" rel="next" href="/page/2/#board"><i class="iconfont icon-arrowright"></i></a>
+    </span>
+  </nav>
 
 
 

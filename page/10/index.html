@@ -1,0 +1,891 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/android-chrome-192x192.png">
+  <link rel="icon" href="/img/favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="ricofx47">
+  <meta name="keywords" content="">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="ricofx47&#39;s blog">
+<meta property="og:url" content="https://ricofx47.cc/page/10/index.html">
+<meta property="og:site_name" content="ricofx47&#39;s blog">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="ricofx47">
+<meta name="twitter:card" content="summary_large_image">
+  
+  <title>ricofx47&#39;s blog</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"ricofx47.cc","root":"/","version":"1.8.12","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname"}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="ricofx47's blog" type="application/atom+xml">
+</head>
+
+
+<body>
+  <header style="height: 100vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>ricofx</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/wallhaven-l3gll2_1280x720.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="ricofx47 blog">
+              
+            </span>
+
+            
+          </div>
+
+          
+            <div class="scroll-down-bar">
+              <i class="iconfont icon-arrowdown"></i>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      <div class="container nopadding-x-md">
+        <div class="py-5" id="board"
+          style=margin-top:0>
+          
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-10 m-auto">
+                
+
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2020/09/01/%E5%BA%B7%E6%89%98%E5%B1%95%E5%BC%80/" target="_self">
+          康托展开
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2020/09/01/%E5%BA%B7%E6%89%98%E5%B1%95%E5%BC%80/" target="_self">
+          
+          
+            
+          
+          
+题目链接
+
+题目
+求一个排列在\(1\)~\(N\)的全排列中的排名。
+解析
+从第一个数开始考虑，比它小的排列第一个数一定比它小，设为\(k\)个。
+后面的数可以乱排，方案数是\(k\times (n-1)!\)。
+后面的数同理，不能再用前面出现的数。
+每一次都要找比当前数小的数个数，用权值树状数组维护。
+时间复杂度\(\mathcal{O}(n\log n)\)
+代码
+123456789101
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-09-01 20:56" pubdate>
+              2020-09-01
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/%E6%A8%A1%E6%9D%BF/">模板</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E5%BA%B7%E6%89%98%E5%B1%95%E5%BC%80/">康托展开</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2020/09/01/%E5%AD%90%E5%BA%8F%E5%88%97%E9%97%AE%E9%A2%98/" target="_self">
+          子序列问题
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2020/09/01/%E5%AD%90%E5%BA%8F%E5%88%97%E9%97%AE%E9%A2%98/" target="_self">
+          
+          
+            
+          
+          
+自己出了一道题，感觉挺有意思的。
+
+题目
+一个长度为\(n\)的序列，将每个子序列的权值定义为\(\min(a-l,a-{l+1},...,a-r)\times \max(a-l,a-{l+1},...,a-r)\)。
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-09-01 20:44" pubdate>
+              2020-09-01
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/%E9%A2%98%E8%A7%A3/">题解</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>
+            
+              <a href="/tags/%E5%8D%95%E8%B0%83%E6%A0%88/">单调栈</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2020/09/01/LOJ_10203%E3%80%8C%E4%B8%80%E6%9C%AC%E9%80%9A_6.3_%E4%BE%8B_1%E3%80%8D%E5%8F%8D%E7%B4%A0%E6%95%B0_Antiprime/" target="_self">
+          LOJ 10203「一本通 6.3 例 1」反素数 Antiprime
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2020/09/01/LOJ_10203%E3%80%8C%E4%B8%80%E6%9C%AC%E9%80%9A_6.3_%E4%BE%8B_1%E3%80%8D%E5%8F%8D%E7%B4%A0%E6%95%B0_Antiprime/" target="_self">
+          
+          
+            
+          
+          
+题目链接
+
+##题解 把\(n\)质因数分解一下，即\(n=\prod p-i^{k-i}\)
+关于反素数的两个结论:
+1. 如果两个数约数个数相同，那么更大的数不可能是反素数。
+2. 我们枚举每个\(k-i\)，\(k-i\)一定是单调不增的。因为如果某个不满足条件的数是反素数，那么将\(k\)调整为单调不增的形式，得到一个比它小的数且约数个数相同，与题设矛盾。所以\(k-i\)一定是单调不增
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-09-01 17:00" pubdate>
+              2020-09-01
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/%E9%A2%98%E8%A7%A3/">题解</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E6%95%B0%E5%AD%A6/">数学</a>
+            
+              <a href="/tags/%E5%94%AF%E4%B8%80%E5%88%86%E8%A7%A3%E5%AE%9A%E7%90%86/">唯一分解定理</a>
+            
+              <a href="/tags/DFS/">DFS</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2020/08/31/LOJ_2279%E3%80%8CSCOI2007%E3%80%8D%E9%99%8D%E9%9B%A8%E9%87%8F/" target="_self">
+          LOJ 2279「SCOI2007」降雨量
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2020/08/31/LOJ_2279%E3%80%8CSCOI2007%E3%80%8D%E9%99%8D%E9%9B%A8%E9%87%8F/" target="_self">
+          
+          
+            
+          
+          
+早就听闻过 BZOJ 上这道题的神贴了，虽然 BZOJ 现在没了...
+
+显然就是线段树来维护一下区间最值，修改都不需要。
+但是...
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-08-31 20:08" pubdate>
+              2020-08-31
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/%E9%A2%98%E8%A7%A3/">题解</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/">线段树</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2020/08/31/LOJ_3282_%E3%80%8CJOISC_2020_Day4%E3%80%8D%E6%B2%BB%E7%96%97%E8%AE%A1%E5%88%92/" target="_self">
+          LOJ 3282 「JOISC 2020 Day4」治疗计划
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2020/08/31/LOJ_3282_%E3%80%8CJOISC_2020_Day4%E3%80%8D%E6%B2%BB%E7%96%97%E8%AE%A1%E5%88%92/" target="_self">
+          
+          
+            
+          
+          
+题目链接
+
+两个计划的治疗区间\([l-i,r-i]\), \([l-j,r-j]\)可以合并，当且仅当\([r-i-l-j+1\geq \left |T-i-T-j\right |]\)
+按照区间顺序，可以有\(\mathcal{O}(m^2)\)的暴力 dp , 每次选出一个最小的去合并其他区间。
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-08-31 18:36" pubdate>
+              2020-08-31
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/%E9%A2%98%E8%A7%A3/">题解</a>
+            
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2020/08/31/LOJ_124_&amp;amp;_125_%E9%99%A4%E6%95%B0%E5%87%BD%E6%95%B0%E6%B1%82%E5%92%8C/" target="_self">
+          LOJ 124 &amp;amp; 125 除数函数求和
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2020/08/31/LOJ_124_&amp;amp;_125_%E9%99%A4%E6%95%B0%E5%87%BD%E6%95%B0%E6%B1%82%E5%92%8C/" target="_self">
+          
+          
+            
+          
+          除数函数求和1
+题目
+\(\sigma-k(n)=\sum-{d\mid n}d^k\)
+求\(\sum-{i=1}^{n}\sigma-k(i)\)的值对\(1e9+7\)取模的结果。
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-08-31 17:26" pubdate>
+              2020-08-31
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/%E9%A2%98%E8%A7%A3/">题解</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E6%95%B0%E8%AE%BA/">数论</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2020/08/30/LOJ_528%E3%80%8CLibreOJ_%CE%B2_Round_#4%E3%80%8D%E6%B1%82%E5%92%8C/" target="_self">
+          LOJ 528「LibreOJ β Round
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2020/08/30/LOJ_528%E3%80%8CLibreOJ_%CE%B2_Round_#4%E3%80%8D%E6%B1%82%E5%92%8C/" target="_self">
+          
+          
+            
+          
+          ##题目 \[\sum\limits-{i=1}^{n}\sum\limits-{j=1}^{m}\mu ^2(\gcd (i,j))\bmod 998244353\]
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-08-30 21:14" pubdate>
+              2020-08-30
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/%E9%A2%98%E8%A7%A3/">题解</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E8%8E%AB%E6%AF%94%E4%B9%8C%E6%96%AF%E5%8F%8D%E6%BC%94/">莫比乌斯反演</a>
+            
+              <a href="/tags/%E6%95%B0%E8%AE%BA%E5%88%86%E5%9D%97/">数论分块</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2020/08/30/%E8%8E%AB%E6%AF%94%E4%B9%8C%E6%96%AF%E5%8F%8D%E6%BC%94%E5%B8%B8%E7%94%A8%E7%BB%93%E8%AE%BA/" target="_self">
+          莫比乌斯反演常用结论
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2020/08/30/%E8%8E%AB%E6%AF%94%E4%B9%8C%E6%96%AF%E5%8F%8D%E6%BC%94%E5%B8%B8%E7%94%A8%E7%BB%93%E8%AE%BA/" target="_self">
+          
+          
+            
+          
+          内容主要来自oi-wiki
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-08-30 18:28" pubdate>
+              2020-08-30
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/%E6%A8%A1%E6%9D%BF/">模板</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E8%8E%AB%E6%AF%94%E4%B9%8C%E6%96%AF%E5%8F%8D%E6%BC%94/">莫比乌斯反演</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2020/08/30/P6672_%E4%BD%A0%E7%9A%84%E7%94%9F%E5%91%BD%E5%B7%B2%E5%A6%82%E9%A3%8E%E4%B8%AD%E6%AE%8B%E7%83%9B/" target="_self">
+          P6672 你的生命已如风中残烛
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2020/08/30/P6672_%E4%BD%A0%E7%9A%84%E7%94%9F%E5%91%BD%E5%B7%B2%E5%A6%82%E9%A3%8E%E4%B8%AD%E6%AE%8B%E7%83%9B/" target="_self">
+          
+          
+            
+          
+          我的生命已如风中残烛...
+思维好题 问题等价于\(m\)个数和为0, 求所有前缀和都不小于零的排列的个数.
+将所有权值 \(-1\) 就可以了.
+可以在最后添加一个\(-1\), 这样就是求前\(m\)个大于, 把排列连成环, 这样就有一个很好的性质, 每个圆排列只有一种断开的方法.
+这个画个图比较好理解, 假设当前已经是合法的方案, 左右移动一下再断开都是不合法的.
+圆排列的排列数是\(m!\
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-08-30 17:58" pubdate>
+              2020-08-30
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/%E9%A2%98%E8%A7%A3/">题解</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/">组合数学</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2020/08/30/P6327_%E5%8C%BA%E9%97%B4%E5%8A%A0%E5%8C%BA%E9%97%B4sin%E5%92%8C/" target="_self">
+          P6327 区间加区间sin和
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2020/08/30/P6327_%E5%8C%BA%E9%97%B4%E5%8A%A0%E5%8C%BA%E9%97%B4sin%E5%92%8C/" target="_self">
+          
+          
+            
+          
+          luogu: P6372 区间加区间sin和 线段树上只维护\(sin\)和是很难更新的，想到和角公式，维护\(cos\)的和。 \[sin(x+y)=sin(x)*cos(y)+cos(x)*sin(y)\] \[cos(x+y)=cos(x)*cos(y)-sin(x)*sin(y)\]
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-08-30 17:54" pubdate>
+              2020-08-30
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/%E9%A2%98%E8%A7%A3/">题解</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/">线段树</a>
+            
+              <a href="/tags/%E5%92%8C%E8%A7%92%E5%85%AC%E5%BC%8F/">和角公式</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+
+
+  <nav aria-label="navigation">
+    <span class="pagination" id="pagination">
+      <a class="extend prev" rel="prev" href="/page/9/#board"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/#board">8</a><a class="page-number" href="/page/9/#board">9</a><span class="page-number current">10</span><a class="page-number" href="/page/11/#board">11</a><a class="page-number" href="/page/12/#board">12</a><a class="extend next" rel="next" href="/page/11/#board"><i class="iconfont icon-arrowright"></i></a>
+    </span>
+  </nav>
+
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      jQuery.ajax({
+        type: 'GET',
+        url: 'https://v1.hitokoto.cn/?c=a&amp;encode=json',
+        headers: {},
+        dataType: 'json',
+        success: function (result) {
+          var text;
+          if (result) {
+            var keys = 'hitokoto'.split('.')
+            if (result instanceof Array) {
+              result = result[0]
+            }
+            for (const k of keys) {
+              var value = result[k]
+              if (typeof value === 'string') {
+                text = value
+                break
+              } else if (value instanceof Object) {
+                result = value
+              }
+            }
+          }
+          text ? typing(text) : typing(title);
+        },
+        error: function () {
+          typing(title)
+        }
+      })
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

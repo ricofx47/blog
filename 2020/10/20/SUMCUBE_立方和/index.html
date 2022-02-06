@@ -1,0 +1,562 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/android-chrome-192x192.png">
+  <link rel="icon" href="/img/favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="
+题目链接
+
+\(k\)次方的组合意义是有顺序的选出\(k\)条边，统计在多少个子图中出现。">
+  <meta name="author" content="ricofx47">
+  <meta name="keywords" content="">
+  <meta name="description" content="题目链接  \(k\)次方的组合意义是有顺序的选出\(k\)条边，统计在多少个子图中出现。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SUMCUBE 立方和">
+<meta property="og:url" content="https://ricofx47.cc/2020/10/20/SUMCUBE_%E7%AB%8B%E6%96%B9%E5%92%8C/index.html">
+<meta property="og:site_name" content="ricofx47&#39;s blog">
+<meta property="og:description" content="题目链接  \(k\)次方的组合意义是有顺序的选出\(k\)条边，统计在多少个子图中出现。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-10-20T12:26:55.000Z">
+<meta property="article:modified_time" content="2022-02-06T12:31:20.473Z">
+<meta property="article:author" content="ricofx47">
+<meta property="article:tag" content="组合数学">
+<meta property="article:tag" content="组合数">
+<meta property="article:tag" content="图论">
+<meta property="article:tag" content="三元环">
+<meta name="twitter:card" content="summary_large_image">
+  
+  <title>SUMCUBE 立方和 - ricofx47&#39;s blog</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"ricofx47.cc","root":"/","version":"1.8.12","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname"}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="ricofx47's blog" type="application/atom+xml">
+</head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>ricofx</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/wallhaven-l3gll2_1280x720.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="SUMCUBE 立方和">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2020-10-20 20:26" pubdate>
+        2020年10月20日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      4.1k 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      13 分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">SUMCUBE 立方和</h1>
+            
+            <div class="markdown-body">
+              <blockquote>
+<p><a target="_blank" rel="noopener" href="https://s3.amazonaws.com/codechef-shared/download/translated/SEPT17/mandarin/SUMCUBE.pdf">题目链接</a></p>
+</blockquote>
+<p><span class="math inline">\(k\)</span>次方的组合意义是有顺序的选出<span class="math inline">\(k\)</span>条边，统计在多少个子图中出现。</p>
+<span id="more"></span>
+<h2 id="k1">k=1</h2>
+<p>考虑每条边的贡献。</p>
+<p>答案显然是<span class="math inline">\(m*2^{n-2}\)</span></p>
+<h2 id="k2">k=2</h2>
+<p>可能选出相同的边，对应<span class="math inline">\(k=1\)</span></p>
+<p>有可能不同，考虑三种情况。</p>
+<ol type="1">
+<li><p>上</p></li>
+<li><p>两条边三个点，<span class="math inline">\(A\rightarrow B\rightarrow C\)</span>，枚举一条边<span class="math inline">\((s,t)\)</span>，<span class="math inline">\((deg-s-1)+(deg-t-1)\)</span><br />
+</p></li>
+<li><p>两条边四个点，<span class="math inline">\(A\rightarrow B,C\rightarrow D\)</span>，总方案数减去上面的，<span class="math inline">\(m^2-①-②\)</span></p></li>
+</ol>
+<h2 id="k3">k=3</h2>
+<p>这个比较麻烦，标程是斯特林数去掉指数，很是不懂。</p>
+<p>其实也可以大力讨论</p>
+<ol type="1">
+<li>三条边重合，即<span class="math inline">\(k=1\)</span></li>
+<li>有两条边重合，对应<span class="math inline">\(k=2\)</span></li>
+<li>三元环，直接<a target="_blank" rel="noopener" href="https://widsnoy.top/archives/76/">三元环计数</a></li>
+<li>三边四点，<span class="math inline">\(A\rightarrow B\rightarrow C \rightarrow D\)</span>或者<span class="math inline">\(A\rightarrow B, A\rightarrow C, A\rightarrow D\)</span>。对于第一种枚举边<span class="math inline">\((B,C)\)</span>，<span class="math inline">\((deg-B-1)\times (deg-C-1)\)</span>，<span class="math inline">\(A,D\)</span>可能是一个点，要减去三元环的情况。第二种枚举<span class="math inline">\(A\)</span>，<span class="math inline">\(deg-A\times (deg-A-1)\times (deg-A-2)\)</span>。</li>
+<li>三边五点， 可能有一种情况<span class="math inline">\(A\rightarrow B\rightarrow C,D\rightarrow E\)</span>。枚举<span class="math inline">\(B\)</span>点，有<span class="math inline">\(deg-B\times(deg-B-1)\times (m-2)\)</span>种方法。但是有可能算到三元环和三边四点的情况。这里注意对于三边四点的第一种情况会算两次，第二种情况算三次。</li>
+<li>三边两点，<span class="math inline">\(m\times (m-1)\times (m-2)\)</span>是有序选不重边的所有方案，减去③④⑤就是这个。</li>
+</ol>
+<p>上面的所有选出的情况都是不考虑顺序的，选不重的边最后应该乘上<span class="math inline">\(6\)</span>表示选取顺序。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> N = <span class="hljs-number">1e5</span> + <span class="hljs-number">5</span>, MOD = <span class="hljs-number">1e9</span> + <span class="hljs-number">7</span>;<br><span class="hljs-keyword">int</span> n, m, k, deg[N];<br><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">fpow</span><span class="hljs-params">(<span class="hljs-keyword">int</span> a, <span class="hljs-keyword">int</span> b)</span> </span>&#123;<br>    <span class="hljs-keyword">if</span> (b &lt; <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">int</span> res = <span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">for</span> (; b; b &gt;&gt;= <span class="hljs-number">1</span>, a = a * <span class="hljs-number">1ll</span> * a % MOD) <span class="hljs-keyword">if</span> (b &amp; <span class="hljs-number">1</span>) res = res * <span class="hljs-number">1ll</span> * a % MOD;<br>    <span class="hljs-keyword">return</span> res;<br>&#125;<br><br><span class="hljs-keyword">namespace</span> baoli &#123;<br>    <span class="hljs-keyword">bool</span> b[<span class="hljs-number">20</span>][<span class="hljs-number">20</span>];<br>    vector&lt;<span class="hljs-keyword">int</span>&gt; e[<span class="hljs-number">20</span>];<br>    <span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">F</span><span class="hljs-params">(<span class="hljs-keyword">int</span> s)</span> </span>&#123;<br>        <span class="hljs-built_in">memset</span>(b, <span class="hljs-number">0</span>, <span class="hljs-keyword">sizeof</span> b);<br>        <span class="hljs-keyword">int</span> res = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; i++) &#123;<br>            <span class="hljs-keyword">if</span> ((<span class="hljs-number">1</span> &lt;&lt; (i - <span class="hljs-number">1</span>)) &amp; s) &#123;<br>                <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j : e[i]) &#123;<br>                    <span class="hljs-keyword">if</span> (!b[i][j] &amp;&amp; (<span class="hljs-number">1</span> &lt;&lt; (j - <span class="hljs-number">1</span>) &amp; s)) res = (res + <span class="hljs-number">1</span>) % MOD, b[i][j] = b[j][i] = <span class="hljs-number">1</span>;<br>                &#125;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br>    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; i++) e[i].<span class="hljs-built_in">clear</span>();<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= m; i++) &#123;<br>            <span class="hljs-keyword">int</span> u, v;<br>            <span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d %d&quot;</span>, &amp;u, &amp;v);<br>            e[u].push-<span class="hljs-built_in">back</span>(v);<br>            e[v].push-<span class="hljs-built_in">back</span>(u);<br>        &#125;<br>        <span class="hljs-keyword">int</span> res = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= (<span class="hljs-number">1</span> &lt;&lt; n) - <span class="hljs-number">1</span>; i++) res = (res + <span class="hljs-built_in">fpow</span>(<span class="hljs-built_in">F</span>(i), k)) % MOD;<br>        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d\n&quot;</span>, res);<br>        <span class="hljs-built_in">exit</span>(<span class="hljs-number">0</span>);<br>    &#125;<br>&#125;<br><span class="hljs-keyword">namespace</span> kk &#123;<br>    vector&lt;<span class="hljs-keyword">int</span>&gt; e[N];<br>    <span class="hljs-keyword">int</span> vis[N];<br>    <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">node</span> &#123;</span><br>        <span class="hljs-keyword">int</span> u, v;<br>    &#125;;<br>    node v[N];<br>    <span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">calc</span><span class="hljs-params">()</span> </span>&#123;<br>        <span class="hljs-keyword">int</span> res = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= m; i++) &#123;<br>            <span class="hljs-keyword">if</span> (deg[v[i].u] &gt; deg[v[i].v] || (deg[v[i].u] == deg[v[i].v] &amp;&amp; v[i].u &lt; v[i].v)) e[v[i].u].push-<span class="hljs-built_in">back</span>(v[i].v);<br>            <span class="hljs-keyword">else</span> e[v[i].v].push-<span class="hljs-built_in">back</span>(v[i].u);<br>        &#125;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; i++) &#123;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">auto</span> v : e[i]) vis[v] = i;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">auto</span> v : e[i])<br>                <span class="hljs-keyword">for</span> (<span class="hljs-keyword">auto</span> j : e[v]) <span class="hljs-keyword">if</span> (vis[j] == i) res++;<br>        &#125;<br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br>    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= m; i++) &#123;<br>            <span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d %d&quot;</span>, &amp;v[i].u, &amp;v[i].v);<br>            deg[v[i].u]++;<br>            deg[v[i].v]++;<br>        &#125;<br>        <span class="hljs-keyword">int</span> y3 = <span class="hljs-built_in">calc</span>();<br>       <span class="hljs-comment">// printf(&quot;y3 = %d\n&quot;, y3);</span><br>        <span class="hljs-keyword">int</span> res1 = m * <span class="hljs-number">1ll</span> * <span class="hljs-built_in">fpow</span>(<span class="hljs-number">2</span>, n - <span class="hljs-number">2</span>) % MOD;<br>        <span class="hljs-keyword">int</span> res = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> tmp = <span class="hljs-number">1ll</span> * m * (m - <span class="hljs-number">1</span>) / <span class="hljs-number">2</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; i++) &#123;<br>            <span class="hljs-keyword">int</span> w = deg[i];<br>            <span class="hljs-keyword">if</span> (n &gt;= <span class="hljs-number">3</span>) res = (res + <span class="hljs-number">1ll</span> * w * (w - <span class="hljs-number">1</span>) / <span class="hljs-number">2</span> % MOD * <span class="hljs-built_in">fpow</span>(<span class="hljs-number">2</span>, n - <span class="hljs-number">3</span>)) % MOD;<br>            tmp -= <span class="hljs-number">1ll</span> * w * (w - <span class="hljs-number">1</span>) / <span class="hljs-number">2</span>;<br>        &#125;<br>        <span class="hljs-keyword">if</span> (n &gt;= <span class="hljs-number">4</span>) res = (res + tmp % MOD * <span class="hljs-built_in">fpow</span>(<span class="hljs-number">2</span>, n - <span class="hljs-number">4</span>)) % MOD;<br>        res= res * <span class="hljs-number">2ll</span> % MOD;<br>        res = (res + m * <span class="hljs-number">1ll</span> * <span class="hljs-built_in">fpow</span>(<span class="hljs-number">2</span>, n - <span class="hljs-number">2</span>) % MOD) % MOD;<br>        <span class="hljs-keyword">int</span> ans = (res + MOD - res1) % MOD;<br>        ans = ans * <span class="hljs-number">3ll</span> % MOD;<br>        ans = ans + res1 % MOD;<br>        <span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> i6 = <span class="hljs-built_in">fpow</span>(<span class="hljs-number">6</span>, MOD - <span class="hljs-number">2</span>), i2 = <span class="hljs-built_in">fpow</span>(<span class="hljs-number">2</span>, MOD - <span class="hljs-number">2</span>);<br>        <span class="hljs-keyword">int</span> cnt4 = MOD - <span class="hljs-number">3</span> * <span class="hljs-number">1ll</span> * y3 % MOD, cnt5 = <span class="hljs-number">0</span>, cnt6 = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; i++) &#123;<br>            cnt4 = (cnt4 + deg[i] * <span class="hljs-number">1ll</span> * (deg[i] - <span class="hljs-number">1</span>) % MOD * (deg[i] - <span class="hljs-number">2</span>) % MOD * <span class="hljs-number">1ll</span> * i6 % MOD) % MOD;<br>        &#125;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= m; i++) &#123;<br>            cnt4 = (cnt4 + (deg[v[i].u] - <span class="hljs-number">1</span>) * <span class="hljs-number">1ll</span> * (deg[v[i].v] - <span class="hljs-number">1</span>) % MOD);<br>        &#125;<br>        cnt5 = MOD - cnt4 * <span class="hljs-number">2ll</span> % MOD;<br>        cnt5 = (cnt5 + MOD - y3 * <span class="hljs-number">1ll</span> * <span class="hljs-number">3</span> % MOD) % MOD;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; i++) &#123;<br>            cnt5 = (cnt5 + MOD - deg[i] * <span class="hljs-number">1ll</span> * (deg[i] - <span class="hljs-number">1</span>) % MOD * (deg[i] - <span class="hljs-number">2</span>) % MOD * <span class="hljs-number">1ll</span> * i6 % MOD) % MOD;<br>        &#125;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; i++) &#123;<br>            cnt5 = (cnt5 + (deg[i] - <span class="hljs-number">1</span>) * <span class="hljs-number">1ll</span> * deg[i] % MOD * <span class="hljs-number">1ll</span> * (m - <span class="hljs-number">2</span>) % MOD * i2 % MOD) % MOD;<br>        &#125;<br>        cnt6 = (m * <span class="hljs-number">1ll</span> * (m - <span class="hljs-number">1</span>) * <span class="hljs-number">1ll</span> * (m - <span class="hljs-number">2</span>) / <span class="hljs-number">6</span> - y3 - cnt4 - cnt5) % MOD;<br>        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%lld\n&quot;</span>, (ans + <span class="hljs-number">6ll</span> * ((y3 * <span class="hljs-number">1ll</span> * <span class="hljs-built_in">fpow</span>(<span class="hljs-number">2</span>, n - <span class="hljs-number">3</span>) % MOD + cnt4 * <span class="hljs-number">1ll</span> * <span class="hljs-built_in">fpow</span>(<span class="hljs-number">2</span>, n - <span class="hljs-number">4</span>) % MOD + cnt5 * <span class="hljs-number">1ll</span> * <span class="hljs-built_in">fpow</span>(<span class="hljs-number">2</span>, n - <span class="hljs-number">5</span>) % MOD + cnt6 * <span class="hljs-number">1ll</span> * <span class="hljs-built_in">fpow</span>(<span class="hljs-number">2</span>, n - <span class="hljs-number">6</span>) % MOD) % MOD) % MOD) % MOD);<br>        <span class="hljs-built_in">exit</span>(<span class="hljs-number">0</span>);<br>    &#125;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d %d %d&quot;</span>, &amp;n, &amp;m, &amp;k);<br>    <span class="hljs-keyword">if</span> (n &lt;= <span class="hljs-number">15</span>) baoli::<span class="hljs-built_in">main</span>();<br>    <span class="hljs-keyword">if</span> (k == <span class="hljs-number">3</span>) kk::<span class="hljs-built_in">main</span>();<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= m; i++) &#123;<br>        <span class="hljs-keyword">int</span> u, v;<br>        <span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d %d&quot;</span>, &amp;u, &amp;v);<br>        deg[u]++, deg[v]++;<br>    &#125;<br>    <span class="hljs-keyword">if</span> (k == <span class="hljs-number">1</span>) <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%lld\n&quot;</span>, m * <span class="hljs-number">1ll</span> * <span class="hljs-built_in">fpow</span>(<span class="hljs-number">2</span>, n - <span class="hljs-number">2</span>) % MOD);<br>    <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (k == <span class="hljs-number">2</span>) &#123;<br>        <span class="hljs-keyword">int</span> res = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> tmp = <span class="hljs-number">1ll</span> * m * (m - <span class="hljs-number">1</span>) / <span class="hljs-number">2</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; i++) &#123;<br>            <span class="hljs-keyword">int</span> w = deg[i];<br>            <span class="hljs-keyword">if</span> (n &gt;= <span class="hljs-number">3</span>) res = (res + <span class="hljs-number">1ll</span> * w * (w - <span class="hljs-number">1</span>) / <span class="hljs-number">2</span> % MOD * <span class="hljs-built_in">fpow</span>(<span class="hljs-number">2</span>, n - <span class="hljs-number">3</span>)) % MOD;<br>            tmp -= <span class="hljs-number">1ll</span> * w * (w - <span class="hljs-number">1</span>) / <span class="hljs-number">2</span>;<br>        &#125;<br>        <span class="hljs-keyword">if</span> (n &gt;= <span class="hljs-number">4</span>) res = (res + tmp % MOD * <span class="hljs-built_in">fpow</span>(<span class="hljs-number">2</span>, n - <span class="hljs-number">4</span>)) % MOD;<br>        res= res * <span class="hljs-number">2ll</span> % MOD;<br>        res = (res + m * <span class="hljs-number">1ll</span> * <span class="hljs-built_in">fpow</span>(<span class="hljs-number">2</span>, n - <span class="hljs-number">2</span>) % MOD) % MOD;<br>        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d\n&quot;</span>, res);<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E9%A2%98%E8%A7%A3/">题解</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/">组合数学</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E7%BB%84%E5%90%88%E6%95%B0/">组合数</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E5%9B%BE%E8%AE%BA/">图论</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E4%B8%89%E5%85%83%E7%8E%AF/">三元环</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2020/10/20/%E3%80%8CLibreOJ-%CE%B2-Round-#2%E3%80%8DDP-%E4%B8%80%E8%88%AC%E7%9C%8B%E8%A7%84%E5%BE%8B/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">「LibreOJ β Round</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2020/10/20/20%E8%81%94%E8%B5%9B%E9%9B%86%E8%AE%ADday7/">
+                        <span class="hidden-mobile">20联赛集训day7</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments" lazyload>
+                
+                  
+                
+                
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"6pWmvPBsfF99X9VjjKGuwRFv-9Nh9j0Va","appKey":"vP5ctWUBAI0OOI4oMEttkc07","path":"window.location.pathname","placeholder":null,"avatar":"retro","meta":["nick","mail","link"],"requiredFields":[],"pageSize":10,"lang":"zh-CN","highlight":true,"recordIP":false,"serverURLs":"","emojiCDN":null,"emojiMaps":null,"enableQQ":false},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
+          Fluid.plugins.initFancyBox('#valine .vcontent img:not(.vemoji)');
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+  
+
+  
+    <!-- MathJax -->
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        loader: {
+          load: ['ui/lazy']
+        },
+        options: {
+          renderActions: {
+            findScript: [10, doc => {
+              document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+                const display = !!node.type.match(/; *mode=display/);
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                const text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = { node: text, delim: '', n: 0 };
+                math.end = { node: text, delim: '', n: 0 };
+                doc.math.push(math);
+              });
+            }, '', false],
+            insertedScript: [200, () => {
+              document.querySelectorAll('mjx-container').forEach(node => {
+                let target = node.parentNode;
+                if (target.nodeName.toLowerCase() === 'li') {
+                  target.parentNode.classList.add('has-jax');
+                }
+              });
+            }, '', false]
+          }
+        }
+      };
+    </script>
+
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" ></script>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

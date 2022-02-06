@@ -1,0 +1,549 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/android-chrome-192x192.png">
+  <link rel="icon" href="/img/favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="ricofx47">
+  <meta name="keywords" content="">
+  <meta name="description" content="退役选手114514分钟没写博客了  题目 L 国有 \(n\) 个星球，有 \(n-1\) 条双向航道连通了 L 国的所有星球，每条航道连通两个星球，第 \(i\) 条航道通过的时间为 \(t-i\)。 小 P 掌管的物流公司有 \(m\) 个运输计划，每个运输计划形如：有一艘物流飞船需要从 \(u-i\) 号星球沿最快的路径到 \(v-i\) 号星球去。注意：任意两艘飞船之间不会产生任何干扰">
+<meta property="og:type" content="article">
+<meta property="og:title" content="NOIP2015 运输计划">
+<meta property="og:url" content="https://ricofx47.cc/2020/11/09/NOIP2015_%E8%BF%90%E8%BE%93%E8%AE%A1%E5%88%92/index.html">
+<meta property="og:site_name" content="ricofx47&#39;s blog">
+<meta property="og:description" content="退役选手114514分钟没写博客了  题目 L 国有 \(n\) 个星球，有 \(n-1\) 条双向航道连通了 L 国的所有星球，每条航道连通两个星球，第 \(i\) 条航道通过的时间为 \(t-i\)。 小 P 掌管的物流公司有 \(m\) 个运输计划，每个运输计划形如：有一艘物流飞船需要从 \(u-i\) 号星球沿最快的路径到 \(v-i\) 号星球去。注意：任意两艘飞船之间不会产生任何干扰">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-11-09T12:57:00.000Z">
+<meta property="article:modified_time" content="2022-02-06T12:26:03.401Z">
+<meta property="article:author" content="ricofx47">
+<meta property="article:tag" content="dfn序">
+<meta property="article:tag" content="trick">
+<meta property="article:tag" content="树">
+<meta property="article:tag" content="二分">
+<meta name="twitter:card" content="summary_large_image">
+  
+  <title>NOIP2015 运输计划 - ricofx47&#39;s blog</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"ricofx47.cc","root":"/","version":"1.8.12","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname"}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="ricofx47's blog" type="application/atom+xml">
+</head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>ricofx</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/wallhaven-l3gll2_1280x720.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="NOIP2015 运输计划">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2020-11-09 20:57" pubdate>
+        2020年11月9日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      2.4k 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      7 分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">NOIP2015 运输计划</h1>
+            
+            <div class="markdown-body">
+              <blockquote>
+<p>退役选手114514分钟没写博客了</p>
+</blockquote>
+<h2 id="题目">题目</h2>
+<p>L 国有 <span class="math inline">\(n\)</span> 个星球，有 <span class="math inline">\(n-1\)</span> 条双向航道连通了 L 国的所有星球，每条航道连通两个星球，第 <span class="math inline">\(i\)</span> 条航道通过的时间为 <span class="math inline">\(t-i\)</span>。</p>
+<p>小 P 掌管的物流公司有 <span class="math inline">\(m\)</span> 个运输计划，每个运输计划形如：有一艘物流飞船需要从 <span class="math inline">\(u-i\)</span> 号星球沿最快的路径到 <span class="math inline">\(v-i\)</span> 号星球去。注意：任意两艘飞船之间不会产生任何干扰。</p>
+<p>在运输计划开始前，小 P 可以自由选择一条航道改造成虫洞，飞船驶过虫洞不消耗时间。在虫洞建设完成后，这 <span class="math inline">\(m\)</span> 个运输计划会同时开始，所有飞船一起出发。当这 <span class="math inline">\(m\)</span> 个运输计划都完成时，小 P 的物流公司的阶段性工作就完成了。求出小 P 的物流公司完成阶段性工作所需要的最短时间。</p>
+<p>数据范围：<span class="math inline">\(n,m\le 3\times 10^5\)</span>，<span class="math inline">\(0\le t-i\le 1000\)</span></p>
+<h2 id="分析">分析</h2>
+<p>一开始没注意到是一棵树，感觉很不可做。</p>
+<p>看了下别人题解，才发现这个性质。</p>
+<p>所以可以先预处理出每个任务的长度。</p>
+<p>之后二分答案，把所有长度<span class="math inline">\(\geq mid\)</span>的计划数量（记为<span class="math inline">\(cnt\)</span>）以及该计划经过的边记录一下。</p>
+<p>怎么判断是否可以把某条边变成虫洞以满足要求呢？</p>
+<p>这个比较简单，如果某条边被每个大于<span class="math inline">\(mid\)</span>的计划经过，并且删除这个边后，满足<span class="math inline">\(max\-len-w\leq mid\)</span>，即符合条件。</p>
+<p>对于打标记，容易想到树剖。</p>
+<p>但是我看了Siyuan大佬博客后，学到了一个比较妙的差分方法。</p>
+<p>树上差分后可以按<span class="math inline">\(dfn\)</span>序算前缀和，这样保证每个点的子树都已经更新到了它上面。</p>
+<h2 id="代码">代码</h2>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> N = <span class="hljs-number">300005</span>, M = <span class="hljs-number">22</span>;<br><span class="hljs-keyword">int</span> head[N], ecnt, n, m, k, dis[N], dep[N], s[N], t[N], L[N], fa[N][M], rnk[N], dfs-clock, len[N], d[N], fr[N];<br><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">E</span> &#123;</span><span class="hljs-keyword">int</span> nxt, v, w;&#125; e[N &lt;&lt; <span class="hljs-number">1</span>];<br><span class="hljs-keyword">void</span> add-<span class="hljs-built_in">edge</span>(<span class="hljs-keyword">int</span> u, <span class="hljs-keyword">int</span> v, <span class="hljs-keyword">int</span> w) &#123;<br>    e[++ecnt] = &#123;head[u], v, w&#125;; head[u] = ecnt;<br>    e[++ecnt] = &#123;head[v], u, w&#125;; head[v] = ecnt;<br>&#125; <br><br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">dfs</span><span class="hljs-params">(<span class="hljs-keyword">int</span> u, <span class="hljs-keyword">int</span> f)</span> </span>&#123;<br>    fa[u][<span class="hljs-number">0</span>] = f;<br>    rnk[++dfs-clock] = u;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt; M; i++) &#123;<br>        fa[u][i] = fa[fa[u][i - <span class="hljs-number">1</span>]][i - <span class="hljs-number">1</span>];<br>    &#125;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = head[u]; i; i = e[i].nxt) &#123;<br>    	<span class="hljs-keyword">int</span> v = e[i].v, w = e[i].w;<br>    	<span class="hljs-keyword">if</span> (v == f) <span class="hljs-keyword">continue</span>;<br>    	dis[v] = dis[u] + w;<br>    	fr[v] = w;<br>    	dep[v] = dep[u] + <span class="hljs-number">1</span>;<br>    	<span class="hljs-built_in">dfs</span>(v, u); <br>    &#125;<br>&#125;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">LCA</span><span class="hljs-params">(<span class="hljs-keyword">int</span> u, <span class="hljs-keyword">int</span> v)</span> </span>&#123;<br>	<span class="hljs-keyword">if</span> (dep[u] &lt; dep[v]) <span class="hljs-built_in">swap</span>(u, v);<br>	<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = M - <span class="hljs-number">1</span>; i + <span class="hljs-number">1</span>; i--) &#123;<br>		<span class="hljs-keyword">if</span> (dep[fa[u][i]] &gt;= dep[v]) u = fa[u][i];<br>	&#125;<br>	<span class="hljs-keyword">if</span> (u == v) <span class="hljs-keyword">return</span> v;<br>	<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = M - <span class="hljs-number">1</span>; i + <span class="hljs-number">1</span>; i--) &#123;<br>		<span class="hljs-keyword">if</span> (fa[u][i] != fa[v][i]) u = fa[u][i], v = fa[v][i];<br>	&#125;<br>	<span class="hljs-keyword">return</span> fa[u][<span class="hljs-number">0</span>];<br>&#125;<br><span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">check</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x)</span> </span>&#123;<br>	<span class="hljs-built_in">memset</span>(d, <span class="hljs-number">0</span>, <span class="hljs-keyword">sizeof</span> d);<br>	<span class="hljs-keyword">int</span> mx = <span class="hljs-number">0</span>, cnt = <span class="hljs-number">0</span>;<br>	<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= m; i++) &#123;<br>		<span class="hljs-keyword">if</span> (len[i] &lt;= x) <span class="hljs-keyword">continue</span>;<br>		cnt++;<br>		mx = <span class="hljs-built_in">max</span>(len[i], mx);<br>		d[s[i]]++;<br>		d[t[i]]++;<br>		d[L[i]] -= <span class="hljs-number">2</span>;<br>	&#125;<br>	<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = n; i; i--) &#123;<br>		<span class="hljs-keyword">int</span> now = rnk[i];<br>        d[fa[now][<span class="hljs-number">0</span>]] += d[now];<br>        <span class="hljs-keyword">if</span> (d[now] == cnt &amp;&amp; mx - fr[now] &lt;= x) <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;<br>	&#125;<br>	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>	<span class="hljs-keyword">int</span> l = <span class="hljs-number">0</span>, r = <span class="hljs-number">0</span>, ans = <span class="hljs-number">0</span>;<br>    <span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d %d&quot;</span>, &amp;n, &amp;m);<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt; n; i++) &#123;<br>    	<span class="hljs-keyword">int</span> u, v, w;<br>    	<span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d %d %d&quot;</span>, &amp;u, &amp;v, &amp;w);<br>    	add-<span class="hljs-built_in">edge</span>(u, v, w);<br>    &#125;<br>    <span class="hljs-built_in">dfs</span>(<span class="hljs-number">1</span>, <span class="hljs-number">0</span>);<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= m; i++) &#123;<br>        <span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d %d&quot;</span>, &amp;s[i], &amp;t[i]);<br>        L[i] = <span class="hljs-built_in">LCA</span>(s[i], t[i]);<br>        len[i] = dis[s[i]] + dis[t[i]] - <span class="hljs-number">2</span> * dis[L[i]];<br>        r = <span class="hljs-built_in">max</span>(len[i], r);<br>    &#125;<br>    <span class="hljs-keyword">while</span> (l &lt;= r) &#123;<br>    	<span class="hljs-keyword">int</span> mid = (l + r) &gt;&gt; <span class="hljs-number">1</span>;<br>    	<span class="hljs-keyword">if</span> (<span class="hljs-built_in">check</span>(mid)) r = mid - <span class="hljs-number">1</span>, ans = mid;<br>    	<span class="hljs-keyword">else</span> l = mid + <span class="hljs-number">1</span>;<br>    &#125;<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d\n&quot;</span>, ans);<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E9%A2%98%E8%A7%A3/">题解</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/dfn%E5%BA%8F/">dfn序</a>
+                    
+                      <a class="hover-with-bg" href="/tags/trick/">trick</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E6%A0%91/">树</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E4%BA%8C%E5%88%86/">二分</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2020/11/10/%E3%80%8CNOIP2017%E3%80%8D_%E9%80%9B%E5%85%AC%E5%9B%AD/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">「NOIP2017」 逛公园</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2020/11/09/%E6%88%96%E8%AE%B8%E6%98%AF%E5%8F%8D%E6%80%9D%E5%90%A7/">
+                        <span class="hidden-mobile">或许是反思吧</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments" lazyload>
+                
+                  
+                
+                
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"6pWmvPBsfF99X9VjjKGuwRFv-9Nh9j0Va","appKey":"vP5ctWUBAI0OOI4oMEttkc07","path":"window.location.pathname","placeholder":null,"avatar":"retro","meta":["nick","mail","link"],"requiredFields":[],"pageSize":10,"lang":"zh-CN","highlight":true,"recordIP":false,"serverURLs":"","emojiCDN":null,"emojiMaps":null,"enableQQ":false},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
+          Fluid.plugins.initFancyBox('#valine .vcontent img:not(.vemoji)');
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+  
+
+  
+    <!-- MathJax -->
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        loader: {
+          load: ['ui/lazy']
+        },
+        options: {
+          renderActions: {
+            findScript: [10, doc => {
+              document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+                const display = !!node.type.match(/; *mode=display/);
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                const text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = { node: text, delim: '', n: 0 };
+                math.end = { node: text, delim: '', n: 0 };
+                doc.math.push(math);
+              });
+            }, '', false],
+            insertedScript: [200, () => {
+              document.querySelectorAll('mjx-container').forEach(node => {
+                let target = node.parentNode;
+                if (target.nodeName.toLowerCase() === 'li') {
+                  target.parentNode.classList.add('has-jax');
+                }
+              });
+            }, '', false]
+          }
+        }
+      };
+    </script>
+
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" ></script>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

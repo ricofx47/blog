@@ -1,0 +1,634 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/android-chrome-192x192.png">
+  <link rel="icon" href="/img/favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="
+首先本人并不会做这两道题，以下只是对题解的理解
+">
+  <meta name="author" content="ricofx47">
+  <meta name="keywords" content="">
+  <meta name="description" content="首先本人并不会做这两道题，以下只是对题解的理解">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C、D题解解析">
+<meta property="og:url" content="https://ricofx47.cc/2020/11/12/C%E3%80%81D%E9%A2%98%E8%A7%A3%E8%A7%A3%E6%9E%90/index.html">
+<meta property="og:site_name" content="ricofx47&#39;s blog">
+<meta property="og:description" content="首先本人并不会做这两道题，以下只是对题解的理解">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://widsnoy.top/usr/uploads/2020/11/1790085055.png">
+<meta property="article:published_time" content="2020-11-12T12:25:07.000Z">
+<meta property="article:modified_time" content="2022-02-06T12:26:03.387Z">
+<meta property="article:author" content="ricofx47">
+<meta property="article:tag" content="数学">
+<meta property="article:tag" content="组合数学">
+<meta property="article:tag" content="动态规划">
+<meta property="article:tag" content="容斥原理">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://widsnoy.top/usr/uploads/2020/11/1790085055.png">
+  
+  <title>C、D题解解析 - ricofx47&#39;s blog</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"ricofx47.cc","root":"/","version":"1.8.12","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname"}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="ricofx47's blog" type="application/atom+xml">
+</head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>ricofx</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/wallhaven-l3gll2_1280x720.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="C、D题解解析">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2020-11-12 20:25" pubdate>
+        2020年11月12日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      4.4k 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      14 分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">C、D题解解析</h1>
+            
+            <div class="markdown-body">
+              <blockquote>
+<p>首先本人并不会做这两道题，以下只是对题解的理解</p>
+</blockquote>
+<span id="more"></span>
+<h2 id="猪国杀">猪国杀</h2>
+<h4 id="题目描述">题目描述</h4>
+<p>《猪国杀》是一款热门的桌上游戏，该游戏以身份、势力或阵营等为线索，以卡牌为形式，合纵连横，经过一轮一轮的谋略和动作获得最终的胜利。《猪国杀》集合历史、文学、美术等元素于一身，在OI界广受欢迎。</p>
+<p>在《猪国杀》游戏中，牌堆中牌的数量是无穷大的，并且每一张牌的点数都是在<span class="math inline">\([1,A]\)</span>内均匀随机的正整数。</p>
+<p>游戏中有多种武将，每个武将有其独特的技能，其中一个技能描述如下：</p>
+<blockquote>
+<p><strong>称猪</strong>：每当你受到一次伤害后，你可以亮出牌堆顶的<span class="math inline">\(n\)</span>张牌。然后获得其中任意数量点数之和不大于<span class="math inline">\(m\)</span>的牌，将其余的牌置入弃牌堆。</p>
+</blockquote>
+<p>现在询问如果“称猪”时总是获得尽量多的牌，那么单次发动“称猪”期望能获得几张牌。</p>
+<h4 id="输入格式">输入格式</h4>
+<p>一行三个整数<span class="math inline">\(n,m,A\)</span>。</p>
+<h4 id="输出格式">输出格式</h4>
+<p>输出一行一个整数表示答案，<strong>对998244353取模。</strong></p>
+<h4 id="样例一输入">样例一输入</h4>
+<figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-symbol">4 </span><span class="hljs-number">12</span> <span class="hljs-number">13</span><br></code></pre></td></tr></table></figure>
+<h4 id="样例一输出">样例一输出</h4>
+<figure class="highlight dns"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs dns"><span class="hljs-number">844808106</span><br></code></pre></td></tr></table></figure>
+<h4 id="样例二输入">样例二输入</h4>
+<figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-symbol">4 </span><span class="hljs-number">13</span> <span class="hljs-number">13</span><br></code></pre></td></tr></table></figure>
+<h4 id="样例二输出">样例二输出</h4>
+<figure class="highlight dns"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs dns"><span class="hljs-number">76298711</span><br></code></pre></td></tr></table></figure>
+<h4 id="样例三输入">样例三输入</h4>
+<figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-symbol">48 </span><span class="hljs-number">47</span> <span class="hljs-number">22</span><br></code></pre></td></tr></table></figure>
+<h4 id="样例三输出">样例三输出</h4>
+<figure class="highlight dns"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs dns"><span class="hljs-number">127439024</span><br></code></pre></td></tr></table></figure>
+<h4 id="数据范围与约定">数据范围与约定</h4>
+<p>本题采用子任务捆绑测试。对于每个子任务，你只有通过了这个子任务的所有数据，才能获得这个子任务的分数。</p>
+<p>对于所有的数据，满足<span class="math inline">\(1\leq n\leq 100\ \ 1\leq m,A\leq 1000\)</span>。</p>
+<ul>
+<li>子任务<span class="math inline">\(1\)</span>（$2<span class="math inline">\(0分）：\)</span>n,m,A$</li>
+<li>子任务<span class="math inline">\(2\)</span>（<span class="math inline">\(20\)</span>分）：<span class="math inline">\(n,m,A\leq 50\)</span></li>
+<li>子任务<span class="math inline">\(3\)</span>（<span class="math inline">\(20\)</span>分）：<span class="math inline">\(n\leq 5\)</span></li>
+<li>子任务<span class="math inline">\(4\)</span>（<span class="math inline">\(20\)</span>分）：<span class="math inline">\(m,A\leq 5\)</span></li>
+<li>子任务<span class="math inline">\(5\)</span>（<span class="math inline">\(20\)</span>分）：没有额外的限制</li>
+</ul>
+<h3 id="题解">题解</h3>
+<p>最优策略肯定是取所有牌中点数最小的几张</p>
+<p>考虑固定选了哪些牌，并求出有多少个方案使得选的牌中前几个恰好是这些，那么有</p>
+<p><span class="math inline">\(ans \times A^n = \sum-{i=0}^{n}\sum-{j=1}^{A}\sum-{k=1}^{n-i}g-{i,j-1,m-j\times k}\times \binom{n}{i} \sum-{t \geq k}\binom{n-i}{t} \times (A-j)^{n-i-t}\)</span></p>
+<p>其中<span class="math inline">\(g-{i,j,k}\)</span>表示有多少个长度为<span class="math inline">\(i\)</span>的正整数序列满足每一个数字不大于<span class="math inline">\(j\)</span>且所有数字总和不超过<span class="math inline">\(k\)</span></p>
+<p>大概就是枚举选的牌中的最大值<span class="math inline">\(j\)</span>，最大值个数<span class="math inline">\(k\)</span>，以及选了<span class="math inline">\(i\)</span>个小于<span class="math inline">\(j\)</span>的牌。</p>
+<p>可以用背包计算，也可以枚举有多少个数字大于<span class="math inline">\(j\)</span>容斥计算，那么有</p>
+<p><span class="math inline">\(ans \times A^n = \sum-{i=0}^{n}\sum-{j=1}^{A}\sum-{k=1}^{n-i}\left(\sum-{t=0}^i (-1)^t\binom{i}{t}\binom{m-k\times j-t \times(j-1)}{i}\right)\times \binom{n}{i} \sum-{t \geq k}\binom{n-i}{t} \times (A-j)^{n-i-t}\)</span></p>
+<p>组合数为<span class="math inline">\(0\)</span>的时候能直接跳过，那么直接按照上式计算大概是<span class="math inline">\(O(n^2m\log m)\)</span>的。</p>
+<h3 id="个人理解">个人理解</h3>
+<p>首先第一个方程不难理解，<span class="math inline">\(i+k\)</span>就是最后选的数。</p>
+<blockquote>
+<p>Q: 题目问的不是出牌数的期望吗，为什么算出方案后不<span class="math inline">\(\times (i+k)\)</span>？</p>
+<p>A: 因为每个方案都会被算<span class="math inline">\(i+k\)</span>次，考虑<span class="math inline">\((3,3,3,5,5,8,6)\)</span>这样的序列，如果是最后选了前五个，你会发现选前四个的时也会分别枚举这个状态（注意状态不仅仅是序列有哪些数，还有最后选出的是哪些），也就是说每个状态会被选的数更少状态枚举到，恰好<span class="math inline">\(i+k\)</span>次</p>
+</blockquote>
+<p>解释下最后的容斥是什么意思。</p>
+<p><span class="math display">\[g-{i,j,k}=\sum-{t=0}^i (-1)^t\binom{i}{t}\binom{k -t \times j}{i}\]</span></p>
+<p>这东西并不是插板法，因为并不要求把<span class="math inline">\(k\)</span>选完。</p>
+<p><img src="https://widsnoy.top/usr/uploads/2020/11/1790085055.png" srcset="/img/loading.gif" lazyload /></p>
+<p>只是往一个方向选，最后一边空出来。</p>
+<p>这样就满足了和<span class="math inline">\(\leq k\)</span>的条件。</p>
+<p>但是你发现不一定满足单个不大于<span class="math inline">\(j\)</span>的条件，所以把大于<span class="math inline">\(j\)</span>的拿出来减去，多减去的又加上......</p>
+<h2 id="数树count">数树(count)</h2>
+<h4 id="题目描述-1">题目描述</h4>
+<p>给定两颗树<span class="math inline">\(T1,T2\)</span>，求<span class="math inline">\(T1\)</span>有多少个连通块与<span class="math inline">\(T2\)</span>同构。</p>
+<p>树<span class="math inline">\(A\)</span>与树<span class="math inline">\(B\)</span>同构当且仅当存在一个<span class="math inline">\(A\)</span>的点集到<span class="math inline">\(B\)</span>的点集的双射<span class="math inline">\(f\)</span>，且存在一个<span class="math inline">\(A\)</span>的边集到<span class="math inline">\(B\)</span>的边集的双射<span class="math inline">\(g\)</span>将边<span class="math inline">\((x,y)\)</span>映射到边<span class="math inline">\((f(x),f(y))\)</span>。换一种说法，即存在一种将<span class="math inline">\(A\)</span>重标号的方案使得<span class="math inline">\(A\)</span>与<span class="math inline">\(B\)</span>完全相同。</p>
+<h4 id="输入格式-1">输入格式</h4>
+<p>第一行一个整数<span class="math inline">\(n\)</span>表示<span class="math inline">\(T1\)</span>的点数。</p>
+<p>接下来<span class="math inline">\(n-1\)</span>行每行两个整数描述<span class="math inline">\(T1\)</span>中的一条边。</p>
+<p>接下来一行一个整数<span class="math inline">\(m\)</span>表示<span class="math inline">\(T2\)</span>的点数。</p>
+<p>之后<span class="math inline">\(m-1\)</span>行每行两个整数描述<span class="math inline">\(T2\)</span>中的一条边。</p>
+<h4 id="输出格式-1">输出格式</h4>
+<p>输出一行一个整数表示答案，<strong>对998244353取模。</strong></p>
+<h4 id="样例一输入-1">样例一输入</h4>
+<figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-number">9</span><br><span class="hljs-symbol">2 </span><span class="hljs-number">4</span><br><span class="hljs-symbol">5 </span><span class="hljs-number">2</span><br><span class="hljs-symbol">1 </span><span class="hljs-number">8</span><br><span class="hljs-symbol">4 </span><span class="hljs-number">8</span><br><span class="hljs-symbol">9 </span><span class="hljs-number">3</span><br><span class="hljs-symbol">3 </span><span class="hljs-number">5</span><br><span class="hljs-symbol">7 </span><span class="hljs-number">9</span><br><span class="hljs-symbol">2 </span><span class="hljs-number">6</span><br><span class="hljs-number">5</span><br><span class="hljs-symbol">2 </span><span class="hljs-number">3</span><br><span class="hljs-symbol">1 </span><span class="hljs-number">3</span><br><span class="hljs-symbol">5 </span><span class="hljs-number">1</span><br><span class="hljs-symbol">4 </span><span class="hljs-number">1</span><br></code></pre></td></tr></table></figure>
+<h4 id="样例一输出-1">样例一输出</h4>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs">2<br></code></pre></td></tr></table></figure>
+<h4 id="样例二">样例二</h4>
+<p>见下发文件中的<code>count/count2.in</code>和<code>count/count2.out</code></p>
+<h4 id="数据范围与约定-1">数据范围与约定</h4>
+<p>本题采用子任务捆绑测试。对于每个子任务，你只有通过了这个子任务的所有数据，才能获得这个子任务的分数。</p>
+<p>对于所有的数据，满足<span class="math inline">\(n\leq 3000\ \ m\leq 10\)</span>。</p>
+<ul>
+<li>子任务<span class="math inline">\(1\)</span>（$2<span class="math inline">\(0分）：\)</span>n,m$</li>
+<li>子任务<span class="math inline">\(2\)</span>（<span class="math inline">\(20\)</span>分）：<span class="math inline">\(n \leq 50\)</span></li>
+<li>子任务<span class="math inline">\(3\)</span>（<span class="math inline">\(10\)</span>分）：<span class="math inline">\(T2\)</span>是一条链</li>
+<li>子任务<span class="math inline">\(4\)</span>（<span class="math inline">\(10\)</span>分）：<span class="math inline">\(T2\)</span>中所有边都有一端是<span class="math inline">\(1\)</span>号点</li>
+<li>子任务<span class="math inline">\(5\)</span>（<span class="math inline">\(40\)</span>分）：没有额外的限制</li>
+</ul>
+<h3 id="题解-1">题解</h3>
+<p>可以考虑求出<span class="math inline">\(T1\)</span>的每个连通块有多少个双射<span class="math inline">\(f\)</span>是合法的之和，然后除去<span class="math inline">\(T2\)</span>的自同构方案数即可。</p>
+<p>我们只要固定一个<span class="math inline">\(T1\)</span>的根即可，但是需要枚举<span class="math inline">\(T2\)</span>的根并每次进行dp。</p>
+<p>令<span class="math inline">\(dp-{u,S}\)</span>表示<span class="math inline">\(u\)</span>的儿子已经向<span class="math inline">\(T2\)</span>的<span class="math inline">\(S\)</span>中的点建立双射的方案数，每次枚举当前儿子与哪个点建立双射进行转移。</p>
+<p>然后将<span class="math inline">\(T1\)</span>每个点与<span class="math inline">\(T2\)</span>的根配对的方案数加起来。</p>
+<p>时间复杂度<span class="math inline">\(O(nm^2 2^m)\)</span>。</p>
+<h3 id="个人理解-1">个人理解</h3>
+<p>首先题目要求算答案的不要求顺序，算<span class="math inline">\(T2\)</span>的自同构方案就相当于除掉顺序，如果你想一步到位还得判重就很麻烦...</p>
+<p>其次，很难对某个联通块换根什么的，所以每次枚举<span class="math inline">\(2\)</span>的根是等效的。</p>
+<p>转移的时候判断孩子<span class="math inline">\(v\)</span>能不能双射到<span class="math inline">\(T2\)</span>某个点<span class="math inline">\(p\)</span>上，其实取决于<span class="math inline">\(v\)</span>的孩子能不能双射到<span class="math inline">\(p\)</span>的孩子上。</p>
+<p>根据<span class="math inline">\(dp\)</span>数组的定义，<span class="math inline">\(v\)</span>的子树双射的方案数也就是它孩子们的双射方案数。</p>
+<p><span class="math inline">\(std\)</span>的代码很牛逼，忍不住抄了一份。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-comment">//copy and paste from std</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> N = <span class="hljs-number">3005</span>, MOD = <span class="hljs-number">998244353</span>, M = <span class="hljs-number">1024</span>;<br><span class="hljs-keyword">int</span> dp[N][M], son[<span class="hljs-number">12</span>], S, lg[M];<br><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">fpow</span><span class="hljs-params">(<span class="hljs-keyword">int</span> a, <span class="hljs-keyword">int</span> b)</span> </span>&#123;<br>	<span class="hljs-keyword">int</span> res = <span class="hljs-number">1</span>;<br>	<span class="hljs-keyword">for</span> (; b; b &gt;&gt;= <span class="hljs-number">1</span>, a = a * <span class="hljs-number">1ll</span> * a % MOD) <span class="hljs-keyword">if</span> (b &amp; <span class="hljs-number">1</span>) res = res * <span class="hljs-number">1ll</span> * a % MOD;<br>	<span class="hljs-keyword">return</span> res;<br>&#125;<br><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Tree</span> &#123;</span><br>	<span class="hljs-keyword">int</span> n;<br>	vector&lt;<span class="hljs-keyword">int</span>&gt; e[N];<br>	<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">input</span><span class="hljs-params">()</span> </span>&#123;<br>		<span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d&quot;</span>, &amp;n);<br>		<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt; n; i++) &#123;<br>			<span class="hljs-keyword">int</span> u, v;<br>			<span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d %d&quot;</span>, &amp;u, &amp;v);<br>			e[u].push-<span class="hljs-built_in">back</span>(v);<br>			e[v].push-<span class="hljs-built_in">back</span>(u);<br>		&#125;<br>	&#125;<br>	<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">init</span><span class="hljs-params">(<span class="hljs-keyword">int</span> u, <span class="hljs-keyword">int</span> fa)</span> </span>&#123;<br>        son[u] = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> v : e[u]) &#123;<br>        	<span class="hljs-keyword">if</span> (v == fa) <span class="hljs-keyword">continue</span>;<br>            <span class="hljs-built_in">init</span>(v, u);<br>            son[u] |= <span class="hljs-number">1</span> &lt;&lt; (v - <span class="hljs-number">1</span>);<br>        &#125;<br>	&#125;<br>	<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">dfs</span><span class="hljs-params">(<span class="hljs-keyword">int</span> u, <span class="hljs-keyword">int</span> fa)</span> </span>&#123;<br>		dp[u][<span class="hljs-number">0</span>] = <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> v : e[u]) &#123;<br>        	<span class="hljs-keyword">if</span> (v == fa) <span class="hljs-keyword">continue</span>;<br>        	<span class="hljs-built_in">dfs</span>(v, u);<br>        	<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = S; i &gt;= <span class="hljs-number">0</span>; i--) <span class="hljs-keyword">if</span> (dp[u][i]) &#123;<br>        		<span class="hljs-keyword">int</span> t = dp[u][i];<br>        		<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> tt = S ^ i; tt; tt -= (tt &amp; -tt)) &#123;<br>        			<span class="hljs-keyword">int</span> p = lg[tt &amp; -tt];<br>        			<span class="hljs-keyword">if</span> (dp[v][son[p + <span class="hljs-number">1</span>]]) dp[u][i | (<span class="hljs-number">1</span> &lt;&lt; p)] = (dp[u][i | (<span class="hljs-number">1</span> &lt;&lt; p)] + t * <span class="hljs-number">1ll</span> * dp[v][son[p + <span class="hljs-number">1</span>]]) % MOD;<br>        		&#125;<br>        	&#125;<br>        &#125;<br>	&#125;<br>&#125; T1, T2;<br><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-built_in">freopen</span>(<span class="hljs-string">&quot;count.in&quot;</span>, <span class="hljs-string">&quot;r&quot;</span>, stdin);<br>    <span class="hljs-built_in">freopen</span>(<span class="hljs-string">&quot;count.out&quot;</span>, <span class="hljs-string">&quot;w&quot;</span>, stdout);<br>	<span class="hljs-keyword">int</span> ans1 = <span class="hljs-number">0</span>, ans2 = <span class="hljs-number">0</span>;<br>	T1.<span class="hljs-built_in">input</span>();<br>	T2.<span class="hljs-built_in">input</span>();<br>	S = (<span class="hljs-number">1</span> &lt;&lt; T2.n) - <span class="hljs-number">1</span>;<br>	<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; T2.n; i++) lg[<span class="hljs-number">1</span> &lt;&lt; i] = i;<br>	<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= T2.n; i++) &#123;<br>		<span class="hljs-built_in">memset</span>(dp, <span class="hljs-number">0</span>, <span class="hljs-keyword">sizeof</span> dp);<br>		T2.<span class="hljs-built_in">init</span>(i, <span class="hljs-number">0</span>);<br>		T1.<span class="hljs-built_in">dfs</span>(<span class="hljs-number">1</span>, <span class="hljs-number">0</span>);<br>		<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">1</span>; j &lt;= T1.n; j++) ans1 = (ans1 + dp[j][son[i]]) % MOD;<br>	&#125;<br>    T1 = T2;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= T2.n; i++) &#123;<br>    	<span class="hljs-built_in">memset</span>(dp, <span class="hljs-number">0</span>, <span class="hljs-keyword">sizeof</span> dp);<br>    	T2.<span class="hljs-built_in">init</span>(i, <span class="hljs-number">0</span>);<br>    	T1.<span class="hljs-built_in">dfs</span>(<span class="hljs-number">1</span>, <span class="hljs-number">0</span>);<br>    	ans2 = (ans2 + dp[<span class="hljs-number">1</span>][son[i]]) % MOD;<br>    &#125;<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%lld\n&quot;</span>, ans1 * <span class="hljs-number">1ll</span> * <span class="hljs-built_in">fpow</span>(ans2, MOD - <span class="hljs-number">2</span>) % MOD);<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E6%B5%8B%E8%AF%95/">测试</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E6%95%B0%E5%AD%A6/">数学</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/">组合数学</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">动态规划</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E5%AE%B9%E6%96%A5%E5%8E%9F%E7%90%86/">容斥原理</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021/11/03/hello-world/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Hello World</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2020/11/11/%E3%80%8CNOIP2017%E3%80%8D%E5%88%97%E9%98%9F_%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+                        <span class="hidden-mobile">「NOIP2017」列队 数据结构</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments" lazyload>
+                
+                  
+                
+                
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"6pWmvPBsfF99X9VjjKGuwRFv-9Nh9j0Va","appKey":"vP5ctWUBAI0OOI4oMEttkc07","path":"window.location.pathname","placeholder":null,"avatar":"retro","meta":["nick","mail","link"],"requiredFields":[],"pageSize":10,"lang":"zh-CN","highlight":true,"recordIP":false,"serverURLs":"","emojiCDN":null,"emojiMaps":null,"enableQQ":false},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
+          Fluid.plugins.initFancyBox('#valine .vcontent img:not(.vemoji)');
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+  
+
+  
+    <!-- MathJax -->
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        loader: {
+          load: ['ui/lazy']
+        },
+        options: {
+          renderActions: {
+            findScript: [10, doc => {
+              document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+                const display = !!node.type.match(/; *mode=display/);
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                const text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = { node: text, delim: '', n: 0 };
+                math.end = { node: text, delim: '', n: 0 };
+                doc.math.push(math);
+              });
+            }, '', false],
+            insertedScript: [200, () => {
+              document.querySelectorAll('mjx-container').forEach(node => {
+                let target = node.parentNode;
+                if (target.nodeName.toLowerCase() === 'li') {
+                  target.parentNode.classList.add('has-jax');
+                }
+              });
+            }, '', false]
+          }
+        }
+      };
+    </script>
+
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" ></script>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

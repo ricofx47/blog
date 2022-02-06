@@ -6,7 +6,7 @@
   <link href="https://ricofx47.cc/atom.xml" rel="self"/>
   
   <link href="https://ricofx47.cc/"/>
-  <updated>2021-12-25T14:10:06.180Z</updated>
+  <updated>2022-02-06T15:04:35.437Z</updated>
   <id>https://ricofx47.cc/</id>
   
   <author>
@@ -17,14 +17,35 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>艰难的Typecho2Hexo</title>
+    <link href="https://ricofx47.cc/2022/02/06/%E8%89%B0%E9%9A%BE%E7%9A%84Typecho2Hexo/"/>
+    <id>https://ricofx47.cc/2022/02/06/%E8%89%B0%E9%9A%BE%E7%9A%84Typecho2Hexo/</id>
+    <published>2022-02-06T14:13:14.000Z</published>
+    <updated>2022-02-06T15:04:35.437Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;闲来无事，打算把以前在 typecho 的文章，迁移这个博客上面来。于是就有了以下痛苦&lt;del&gt;无聊&lt;/del&gt;的过程，现将其记录于此。</summary>
+    
+    
+    
+    <category term="折腾" scheme="https://ricofx47.cc/categories/%E6%8A%98%E8%85%BE/"/>
+    
+    
+    <category term="linux" scheme="https://ricofx47.cc/tags/linux/"/>
+    
+    <category term="hexo" scheme="https://ricofx47.cc/tags/hexo/"/>
+    
+  </entry>
+  
+  <entry>
     <title>高考题面背后的故事</title>
     <link href="https://ricofx47.cc/2021/12/25/xgk2/"/>
     <id>https://ricofx47.cc/2021/12/25/xgk2/</id>
     <published>2021-12-25T13:33:25.000Z</published>
-    <updated>2021-12-25T14:10:06.180Z</updated>
+    <updated>2022-02-06T12:26:03.377Z</updated>
     
     
-    <summary type="html">&lt;p&gt;做到过这样一道题&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;做到过这样一道题</summary>
     
     
     
@@ -40,7 +61,7 @@
     <link href="https://ricofx47.cc/2021/11/04/Lagrange/"/>
     <id>https://ricofx47.cc/2021/11/04/Lagrange/</id>
     <published>2021-11-04T06:36:24.000Z</published>
-    <updated>2021-12-25T13:22:22.930Z</updated>
+    <updated>2022-02-06T12:26:03.377Z</updated>
     
     
     <summary type="html">&lt;p&gt;其实是多年前写的一篇笔记了，做测试文章。&lt;/p&gt;</summary>
@@ -68,6 +89,428 @@
     
     
     
+    
+  </entry>
+  
+  <entry>
+    <title>C、D题解解析</title>
+    <link href="https://ricofx47.cc/2020/11/12/C%E3%80%81D%E9%A2%98%E8%A7%A3%E8%A7%A3%E6%9E%90/"/>
+    <id>https://ricofx47.cc/2020/11/12/C%E3%80%81D%E9%A2%98%E8%A7%A3%E8%A7%A3%E6%9E%90/</id>
+    <published>2020-11-12T12:25:07.000Z</published>
+    <updated>2022-02-06T12:26:03.387Z</updated>
+    
+    
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;首先本人并不会做这两道题，以下只是对题解的理解&lt;/p&gt;
+&lt;/blockquote&gt;</summary>
+    
+    
+    
+    <category term="测试" scheme="https://ricofx47.cc/categories/%E6%B5%8B%E8%AF%95/"/>
+    
+    
+    <category term="数学" scheme="https://ricofx47.cc/tags/%E6%95%B0%E5%AD%A6/"/>
+    
+    <category term="组合数学" scheme="https://ricofx47.cc/tags/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/"/>
+    
+    <category term="动态规划" scheme="https://ricofx47.cc/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
+    
+    <category term="容斥原理" scheme="https://ricofx47.cc/tags/%E5%AE%B9%E6%96%A5%E5%8E%9F%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>「NOIP2017」列队 数据结构</title>
+    <link href="https://ricofx47.cc/2020/11/11/%E3%80%8CNOIP2017%E3%80%8D%E5%88%97%E9%98%9F_%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    <id>https://ricofx47.cc/2020/11/11/%E3%80%8CNOIP2017%E3%80%8D%E5%88%97%E9%98%9F_%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</id>
+    <published>2020-11-11T10:31:39.000Z</published>
+    <updated>2022-02-06T12:19:21.107Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="题解" scheme="https://ricofx47.cc/categories/%E9%A2%98%E8%A7%A3/"/>
+    
+    
+    <category term="线段树" scheme="https://ricofx47.cc/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/"/>
+    
+    <category term="树状数组" scheme="https://ricofx47.cc/tags/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/"/>
+    
+    <category term="数据结构" scheme="https://ricofx47.cc/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+    <category term="平衡树" scheme="https://ricofx47.cc/tags/%E5%B9%B3%E8%A1%A1%E6%A0%91/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>选数 容斥原理</title>
+    <link href="https://ricofx47.cc/2020/11/11/%E9%80%89%E6%95%B0_%E5%AE%B9%E6%96%A5%E5%8E%9F%E7%90%86/"/>
+    <id>https://ricofx47.cc/2020/11/11/%E9%80%89%E6%95%B0_%E5%AE%B9%E6%96%A5%E5%8E%9F%E7%90%86/</id>
+    <published>2020-11-11T09:34:00.000Z</published>
+    <updated>2022-02-06T12:26:03.384Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;题目&quot;&gt;题目&lt;/h2&gt;
+&lt;p&gt;桌面上有&lt;span class=&quot;math inline&quot;&gt;\(N\)&lt;/span&gt;个数字排成一排，小武要求小林从中选出&lt;span class=&quot;math inline&quot;&gt;\(3\)&lt;/span&gt;个数字，使得这&lt;span</summary>
+        
+      
+    
+    
+    
+    <category term="题解" scheme="https://ricofx47.cc/categories/%E9%A2%98%E8%A7%A3/"/>
+    
+    
+    <category term="数学" scheme="https://ricofx47.cc/tags/%E6%95%B0%E5%AD%A6/"/>
+    
+    <category term="容斥原理" scheme="https://ricofx47.cc/tags/%E5%AE%B9%E6%96%A5%E5%8E%9F%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>「NOIP2017」宝藏</title>
+    <link href="https://ricofx47.cc/2020/11/11/%E3%80%8CNOIP2017%E3%80%8D%E5%AE%9D%E8%97%8F/"/>
+    <id>https://ricofx47.cc/2020/11/11/%E3%80%8CNOIP2017%E3%80%8D%E5%AE%9D%E8%97%8F/</id>
+    <published>2020-11-10T23:46:18.000Z</published>
+    <updated>2022-02-06T12:19:21.084Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;https://loj.ac/problem/2318&quot;&gt;「NOIP2017」宝藏&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;不知道为什么，最开始&lt;span class=&quot;math</summary>
+        
+      
+    
+    
+    
+    <category term="题解" scheme="https://ricofx47.cc/categories/%E9%A2%98%E8%A7%A3/"/>
+    
+    
+    <category term="动态规划" scheme="https://ricofx47.cc/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
+    
+    <category term="状压dp" scheme="https://ricofx47.cc/tags/%E7%8A%B6%E5%8E%8Bdp/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>YJYX Ak king !</title>
+    <link href="https://ricofx47.cc/2020/11/10/YJYX_Ak_king_!/"/>
+    <id>https://ricofx47.cc/2020/11/10/YJYX_Ak_king_!/</id>
+    <published>2020-11-10T13:41:00.000Z</published>
+    <updated>2022-02-06T12:19:21.137Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;由于&lt;a href=&quot;https://denerate.ink/&quot;&gt;我的博客&lt;/a&gt;被太多人膜拜变得极不稳定，因此写在这个菜鸡的博客上&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="随笔" scheme="https://ricofx47.cc/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+    <category term="其他" scheme="https://ricofx47.cc/tags/%E5%85%B6%E4%BB%96/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>「HAOI2016」放棋子</title>
+    <link href="https://ricofx47.cc/2020/11/10/%E3%80%8CHAOI2016%E3%80%8D%E6%94%BE%E6%A3%8B%E5%AD%90/"/>
+    <id>https://ricofx47.cc/2020/11/10/%E3%80%8CHAOI2016%E3%80%8D%E6%94%BE%E6%A3%8B%E5%AD%90/</id>
+    <published>2020-11-10T13:28:00.000Z</published>
+    <updated>2022-02-06T12:19:21.117Z</updated>
+    
+    
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;https://loj.ac/problem/2061&quot;&gt;「HAOI2016」放棋子&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;这题，一看就很状压&lt;span class=&quot;math inline&quot;&gt;\(dp\)&lt;/span&gt;</summary>
+    
+    
+    
+    <category term="题解" scheme="https://ricofx47.cc/categories/%E9%A2%98%E8%A7%A3/"/>
+    
+    
+    <category term="数学" scheme="https://ricofx47.cc/tags/%E6%95%B0%E5%AD%A6/"/>
+    
+    <category term="组合数学" scheme="https://ricofx47.cc/tags/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/"/>
+    
+    <category term="错排" scheme="https://ricofx47.cc/tags/%E9%94%99%E6%8E%92/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>LOJ 6274  数字</title>
+    <link href="https://ricofx47.cc/2020/11/10/LOJ_6274__%E6%95%B0%E5%AD%97/"/>
+    <id>https://ricofx47.cc/2020/11/10/LOJ_6274__%E6%95%B0%E5%AD%97/</id>
+    <published>2020-11-10T11:37:00.000Z</published>
+    <updated>2022-02-06T12:19:21.107Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;首先，把所有数二进制拆分一下，然后数位&lt;span class=&quot;math inline&quot;&gt;\(dp\)&lt;/span&gt;爆搜当前位分别填什么，然后这题就做完了。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="题解" scheme="https://ricofx47.cc/categories/%E9%A2%98%E8%A7%A3/"/>
+    
+    
+    <category term="动态规划" scheme="https://ricofx47.cc/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
+    
+    <category term="数位dp" scheme="https://ricofx47.cc/tags/%E6%95%B0%E4%BD%8Ddp/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>「NOIP2017」 逛公园</title>
+    <link href="https://ricofx47.cc/2020/11/10/%E3%80%8CNOIP2017%E3%80%8D_%E9%80%9B%E5%85%AC%E5%9B%AD/"/>
+    <id>https://ricofx47.cc/2020/11/10/%E3%80%8CNOIP2017%E3%80%8D_%E9%80%9B%E5%85%AC%E5%9B%AD/</id>
+    <published>2020-11-10T06:42:00.000Z</published>
+    <updated>2022-02-06T12:26:03.377Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;https://loj.ac/problem/2316&quot;&gt;「NOIP2017」 逛公园&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;题目&quot;&gt;题目&lt;/h2&gt;
+&lt;p&gt;策策同学特别喜欢逛公园。公园可以看成一张&lt;span</summary>
+        
+      
+    
+    
+    
+    <category term="题解" scheme="https://ricofx47.cc/categories/%E9%A2%98%E8%A7%A3/"/>
+    
+    
+    <category term="动态规划" scheme="https://ricofx47.cc/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
+    
+    <category term="最短路" scheme="https://ricofx47.cc/tags/%E6%9C%80%E7%9F%AD%E8%B7%AF/"/>
+    
+    <category term="拓扑排序" scheme="https://ricofx47.cc/tags/%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>NOIP2015 运输计划</title>
+    <link href="https://ricofx47.cc/2020/11/09/NOIP2015_%E8%BF%90%E8%BE%93%E8%AE%A1%E5%88%92/"/>
+    <id>https://ricofx47.cc/2020/11/09/NOIP2015_%E8%BF%90%E8%BE%93%E8%AE%A1%E5%88%92/</id>
+    <published>2020-11-09T12:57:00.000Z</published>
+    <updated>2022-02-06T12:26:03.401Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;退役选手114514分钟没写博客了&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;题目&quot;&gt;题目&lt;/h2&gt;
+&lt;p&gt;L 国有 &lt;span class=&quot;math inline&quot;&gt;\(n\)&lt;/span&gt; 个星球，有 &lt;span</summary>
+        
+      
+    
+    
+    
+    <category term="题解" scheme="https://ricofx47.cc/categories/%E9%A2%98%E8%A7%A3/"/>
+    
+    
+    <category term="dfn序" scheme="https://ricofx47.cc/tags/dfn%E5%BA%8F/"/>
+    
+    <category term="trick" scheme="https://ricofx47.cc/tags/trick/"/>
+    
+    <category term="树" scheme="https://ricofx47.cc/tags/%E6%A0%91/"/>
+    
+    <category term="二分" scheme="https://ricofx47.cc/tags/%E4%BA%8C%E5%88%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>或许是反思吧</title>
+    <link href="https://ricofx47.cc/2020/11/09/%E6%88%96%E8%AE%B8%E6%98%AF%E5%8F%8D%E6%80%9D%E5%90%A7/"/>
+    <id>https://ricofx47.cc/2020/11/09/%E6%88%96%E8%AE%B8%E6%98%AF%E5%8F%8D%E6%80%9D%E5%90%A7/</id>
+    <published>2020-11-09T04:27:42.000Z</published>
+    <updated>2022-02-06T12:19:21.144Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;或许是这个博客最后一篇文章了&lt;/p&gt;
+&lt;p&gt;其实我并不知道该说什么，但总想写点什么&lt;/p&gt;
+&lt;p&gt;停了两个月的学科课，以这样垃圾的初赛成绩结束我的OI生涯，我自己都觉得很滑稽&lt;/p&gt;
+&lt;p&gt;我不知道为什么我还坐在机房里，在我心里已经成为了逃避现实的地方吧&lt;/p&gt;
+&lt;p&gt;没错</summary>
+        
+      
+    
+    
+    
+    <category term="随笔" scheme="https://ricofx47.cc/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>20普转提day2 题解</title>
+    <link href="https://ricofx47.cc/2020/10/29/20%E6%99%AE%E8%BD%AC%E6%8F%90day2_%E9%A2%98%E8%A7%A3/"/>
+    <id>https://ricofx47.cc/2020/10/29/20%E6%99%AE%E8%BD%AC%E6%8F%90day2_%E9%A2%98%E8%A7%A3/</id>
+    <published>2020-10-29T07:02:00.000Z</published>
+    <updated>2022-02-06T12:19:21.130Z</updated>
+    
+    
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;马上联赛了，把陈年老题改一下，&lt;del&gt;试图找点自信?&lt;/del&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;感觉沈睿出的题还是很有技术含量的，只是我不会做就是了。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://zhengruioi.com/contest/562&quot;&gt;比赛地址&lt;/a&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="测试" scheme="https://ricofx47.cc/categories/%E6%B5%8B%E8%AF%95/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>SCOI2012 滑雪与时间胶囊</title>
+    <link href="https://ricofx47.cc/2020/10/23/SCOI2012_%E6%BB%91%E9%9B%AA%E4%B8%8E%E6%97%B6%E9%97%B4%E8%83%B6%E5%9B%8A/"/>
+    <id>https://ricofx47.cc/2020/10/23/SCOI2012_%E6%BB%91%E9%9B%AA%E4%B8%8E%E6%97%B6%E9%97%B4%E8%83%B6%E5%9B%8A/</id>
+    <published>2020-10-23T11:40:00.000Z</published>
+    <updated>2022-02-06T12:26:03.401Z</updated>
+    
+    
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;https://loj.ac/problem/2373&quot;&gt;「SCOI2012」滑雪与时间胶囊&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;因为只能从更高的点到不高于它的点。&lt;/p&gt;
+&lt;p&gt;我们给边定向后(虽然有些边还是无向的)，看一下从&lt;span class=&quot;math inline&quot;&gt;\(1\)&lt;/span&gt;能到哪些点就。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="题解" scheme="https://ricofx47.cc/categories/%E9%A2%98%E8%A7%A3/"/>
+    
+    
+    <category term="最小生成树" scheme="https://ricofx47.cc/tags/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/"/>
+    
+    <category term="数据结构" scheme="https://ricofx47.cc/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>树上差分</title>
+    <link href="https://ricofx47.cc/2020/10/23/%E6%A0%91%E4%B8%8A%E5%B7%AE%E5%88%86/"/>
+    <id>https://ricofx47.cc/2020/10/23/%E6%A0%91%E4%B8%8A%E5%B7%AE%E5%88%86/</id>
+    <published>2020-10-23T11:16:43.000Z</published>
+    <updated>2022-02-06T12:26:03.384Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;dfs-序-3树上差分-1&quot;&gt;&lt;a href=&quot;https://loj.ac/problem/146&quot;&gt;DFS 序 3，树上差分 1&lt;/a&gt;&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;给一棵有根树，这棵树由编号为&lt;span class=&quot;math inline&quot;&gt;\(1...N\)&lt;/span&gt;的 &lt;span class=&quot;math inline&quot;&gt;\(N\)&lt;/span&gt;个结点组成。根结点的编号为&lt;span class=&quot;math inline&quot;&gt;\(R\)&lt;/span&gt; 。每个结点都有一个权值，结点&lt;span class=&quot;math inline&quot;&gt;\(i\)&lt;/span&gt; 的权值为&lt;span class=&quot;math inline&quot;&gt;\(V-i\)&lt;/span&gt; 。 接下来有&lt;span class=&quot;math inline&quot;&gt;\(M\)&lt;/span&gt;组操作，操作分为三类：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;1 a b x&lt;/code&gt;，表示将「结点&lt;span class=&quot;math inline&quot;&gt;\(a\)&lt;/span&gt;到结点&lt;span class=&quot;math inline&quot;&gt;\(b\)&lt;/span&gt;的简单路径」上所有结点的权值都增加&lt;span class=&quot;math inline&quot;&gt;\(x\)&lt;/span&gt; ；&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;2 a&lt;/code&gt;，表示求结点&lt;span class=&quot;math inline&quot;&gt;\(a\)&lt;/span&gt; 的权值。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;3 a&lt;/code&gt;，表示求 &lt;span class=&quot;math inline&quot;&gt;\(a\)&lt;/span&gt;的子树上所有结点的权值之和。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;上来就写了树剖，交上去&lt;span class=&quot;math inline&quot;&gt;\(TLE\)&lt;/span&gt;了一个点。&lt;/p&gt;
+&lt;p&gt;诶，我被卡常数了？&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="题解" scheme="https://ricofx47.cc/categories/%E9%A2%98%E8%A7%A3/"/>
+    
+    
+    <category term="数据结构" scheme="https://ricofx47.cc/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+    <category term="树上差分" scheme="https://ricofx47.cc/tags/%E6%A0%91%E4%B8%8A%E5%B7%AE%E5%88%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>对拍脚本</title>
+    <link href="https://ricofx47.cc/2020/10/23/%E5%AF%B9%E6%8B%8D%E8%84%9A%E6%9C%AC/"/>
+    <id>https://ricofx47.cc/2020/10/23/%E5%AF%B9%E6%8B%8D%E8%84%9A%E6%9C%AC/</id>
+    <published>2020-10-23T10:09:08.000Z</published>
+    <updated>2022-02-06T12:26:03.381Z</updated>
+    
+    
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;贴一下对拍的脚本&lt;/p&gt;
+&lt;/blockquote&gt;</summary>
+    
+    
+    
+    <category term="模板" scheme="https://ricofx47.cc/categories/%E6%A8%A1%E6%9D%BF/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>ZJOI2016 小星星</title>
+    <link href="https://ricofx47.cc/2020/10/21/ZJOI2016_%E5%B0%8F%E6%98%9F%E6%98%9F/"/>
+    <id>https://ricofx47.cc/2020/10/21/ZJOI2016_%E5%B0%8F%E6%98%9F%E6%98%9F/</id>
+    <published>2020-10-21T12:09:00.000Z</published>
+    <updated>2022-02-06T12:26:03.407Z</updated>
+    
+    
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;https://loj.ac/problem/2091&quot;&gt;题目链接&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;感觉是第一次入手容斥原理 (?)&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="题解" scheme="https://ricofx47.cc/categories/%E9%A2%98%E8%A7%A3/"/>
+    
+    
+    <category term="数学" scheme="https://ricofx47.cc/tags/%E6%95%B0%E5%AD%A6/"/>
+    
+    <category term="组合数学" scheme="https://ricofx47.cc/tags/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/"/>
+    
+    <category term="容斥原理" scheme="https://ricofx47.cc/tags/%E5%AE%B9%E6%96%A5%E5%8E%9F%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>「LibreOJ β Round</title>
+    <link href="https://ricofx47.cc/2020/10/20/%E3%80%8CLibreOJ-%CE%B2-Round-#2%E3%80%8DDP-%E4%B8%80%E8%88%AC%E7%9C%8B%E8%A7%84%E5%BE%8B/"/>
+    <id>https://ricofx47.cc/2020/10/20/%E3%80%8CLibreOJ-%CE%B2-Round-#2%E3%80%8DDP-%E4%B8%80%E8%88%AC%E7%9C%8B%E8%A7%84%E5%BE%8B/</id>
+    <published>2020-10-20T13:10:31.000Z</published>
+    <updated>2022-02-06T12:26:03.407Z</updated>
+    
+    
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;https://loj.ac/problem/516&quot;&gt;「LibreOJ β Round #2」DP 一般看规律&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;感觉题目不是很难，不过代码技巧学习了。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="题解" scheme="https://ricofx47.cc/categories/%E9%A2%98%E8%A7%A3/"/>
+    
+    
+    <category term="数据结构" scheme="https://ricofx47.cc/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
   </entry>
   

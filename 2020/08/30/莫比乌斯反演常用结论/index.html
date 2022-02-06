@@ -1,0 +1,616 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/android-chrome-192x192.png">
+  <link rel="icon" href="/img/favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="内容主要来自oi-wiki">
+  <meta name="author" content="ricofx47">
+  <meta name="keywords" content="">
+  <meta name="description" content="内容主要来自oi-wiki">
+<meta property="og:type" content="article">
+<meta property="og:title" content="莫比乌斯反演常用结论">
+<meta property="og:url" content="https://ricofx47.cc/2020/08/30/%E8%8E%AB%E6%AF%94%E4%B9%8C%E6%96%AF%E5%8F%8D%E6%BC%94%E5%B8%B8%E7%94%A8%E7%BB%93%E8%AE%BA/index.html">
+<meta property="og:site_name" content="ricofx47&#39;s blog">
+<meta property="og:description" content="内容主要来自oi-wiki">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-08-30T10:28:00.000Z">
+<meta property="article:modified_time" content="2022-02-06T12:26:03.384Z">
+<meta property="article:author" content="ricofx47">
+<meta property="article:tag" content="莫比乌斯反演">
+<meta name="twitter:card" content="summary_large_image">
+  
+  <title>莫比乌斯反演常用结论 - ricofx47&#39;s blog</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"ricofx47.cc","root":"/","version":"1.8.12","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname"}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="ricofx47's blog" type="application/atom+xml">
+</head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>ricofx</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/wallhaven-l3gll2_1280x720.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="莫比乌斯反演常用结论">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2020-08-30 18:28" pubdate>
+        2020年8月30日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      3.6k 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      11 分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">莫比乌斯反演常用结论</h1>
+            
+            <div class="markdown-body">
+              <p>内容主要来自<a target="_blank" rel="noopener" href="https://oi-wiki.org/math/mobius/">oi-wiki</a><br />
+<span id="more"></span> ##前置知识 <span class="math display">\[
+\forall a,b,c\in\mathbb{Z},\left\lfloor\frac{a}{bc}\right\rfloor=\left\lfloor\frac{\left\lfloor\frac{a}{b}\right\rfloor}{c}\right\rfloor
+\]</span><br />
+数论分块的过程大概如下：考虑含有 <span class="math inline">\(\left\lfloor\frac{n}{i}\right\rfloor\)</span> 的求和式子（ <span class="math inline">\(n\)</span> 为常数）</p>
+<p>对于任意一个 <span class="math inline">\(i(i\leq n)\)</span> ，我们需要找到一个最大的 <span class="math inline">\(j(i\leq j\leq n)\)</span> ，使得 <span class="math inline">\(\left\lfloor\frac{n}{i}\right\rfloor = \left\lfloor\frac{n}{j}\right\rfloor\)</span> .</p>
+<p>此时 <span class="math inline">\(j=\left\lfloor\frac{n}{\left\lfloor\frac{n}{i}\right\rfloor}\right\rfloor\)</span> .</p>
+<p>显然 <span class="math inline">\(j\leq n\)</span> ，考虑证明 <span class="math inline">\(j\geq i\)</span> ：</p>
+<p><span class="math display">\[
+\begin{aligned}
+&amp;\left\lfloor\frac{n}{i}\right\rfloor \leq \frac{n}{i}\\
+\implies
+&amp;\left\lfloor\frac{n}{ \left\lfloor\frac{n}{i}\right\rfloor }\right\rfloor
+\geq \left\lfloor\frac{n}{ \frac{n}{i} }\right\rfloor
+= \left\lfloor i \right\rfloor=i \\
+\implies
+&amp;i\leq \left\lfloor\frac{n}{ \left\lfloor\frac{n}{i}\right\rfloor }\right\rfloor=j\\
+&amp;&amp;\square
+\end{aligned}
+\]</span></p>
+<p>不妨设 <span class="math inline">\(k=\left\lfloor\frac{n}{i}\right\rfloor\)</span> ，考虑证明当 <span class="math inline">\(\left\lfloor\frac{n}{j}\right\rfloor=k\)</span> 时， <span class="math inline">\(j\)</span> 的最大值为 <span class="math inline">\(\left\lfloor\frac{n}{k}\right\rfloor\)</span> ：</p>
+<p><span class="math display">\[
+\left\lfloor\frac{n}{j}\right\rfloor=k
+\iff
+k\leq\frac{n}{j}&lt;k+1
+\iff
+\frac{1}{k+1}&lt;\frac{j}{n}\leq\frac{1}{k}
+\iff
+\frac{n}{k+1}&lt;j\leq\frac{n}{k}
+\]</span></p>
+<p>又因为 <span class="math inline">\(j\)</span> 为整数 所以 <span class="math inline">\(j-{max}=\left\lfloor\frac{n}{k}\right\rfloor\)</span></p>
+<p>利用上述结论，我们每次以 <span class="math inline">\([i,j]\)</span> 为一块，分块求和即可</p>
+<h2 id="积性函数">积性函数</h2>
+<h3 id="定义">定义</h3>
+<p>若函数 <span class="math inline">\(f(n)\)</span> 满足 <span class="math inline">\(f(1)=1\)</span> 且 <span class="math inline">\(\forall x,y \in \mathbb{N}-{+},\gcd(x,y)=1\)</span> 都有 <span class="math inline">\(f(xy)=f(x)f(y)\)</span> ，则 <span class="math inline">\(f(n)\)</span> 为积性函数。</p>
+<p>若函数 <span class="math inline">\(f(n)\)</span> 满足 <span class="math inline">\(f(1)=1\)</span> 且 <span class="math inline">\(\forall x,y \in \mathbb{N}-{+}\)</span> 都有 <span class="math inline">\(f(xy)=f(x)f(y)\)</span> ，则 <span class="math inline">\(f(n)\)</span> 为完全积性函数。</p>
+<h3 id="性质">性质</h3>
+<p>若 <span class="math inline">\(f(x)\)</span> 和 <span class="math inline">\(g(x)\)</span> 均为积性函数，则以下函数也为积性函数：</p>
+<p><span class="math display">\[
+\begin{aligned}
+h(x)&amp;=f(x^p)\\
+h(x)&amp;=f^p(x)\\
+h(x)&amp;=f(x)g(x)\\
+h(x)&amp;=\sum-{d\mid x}f(d)g(\frac{x}{d})
+\end{aligned}
+\]</span></p>
+<p>设 <span class="math inline">\(x=\prod p-i^{k-i}\)</span></p>
+<p>若 <span class="math inline">\(F(x)\)</span> 为积性函数，则有 <span class="math inline">\(F(x)=\prod F(p-i^{k-i})\)</span> 。</p>
+<p>若 <span class="math inline">\(F(x)\)</span> 为完全积性函数，则有 <span class="math inline">\(F(X)=\prod F(p-i)^{k-i}\)</span> 。 ###常见数论函数 - 单位函数： <span class="math inline">\(\epsilon(n)=[n=1]\)</span> （完全积性） - 恒等函数： <span class="math inline">\(\operatorname{id}-k(n)=n^k\)</span> <span class="math inline">\(\operatorname{id}-{1}(n)\)</span> 通常简记作 <span class="math inline">\(\operatorname{id}(n)\)</span> 。（完全积性） - 常数函数： <span class="math inline">\(1(n)=1\)</span> （完全积性） - 除数函数： <span class="math inline">\(\sigma-{k}(n)=\sum-{d\mid n}d^{k}\)</span> <span class="math inline">\(\sigma-{0}(n)\)</span> 通常简记作 <span class="math inline">\(\operatorname{d}(n)\)</span> 或 <span class="math inline">\(\tau(n)\)</span> ， <span class="math inline">\(\sigma-{1}(n)\)</span> 通常简记作 <span class="math inline">\(\sigma(n)\)</span> 。 - 欧拉函数： <span class="math inline">\(\varphi(n)=\sum-{i=1}^n [\gcd(i,n)=1]\)</span> - 莫比乌斯函数： <span class="math inline">\(\mu(n) = \begin{cases}1 &amp; n=1 \\ 0 &amp; \exists d&gt;1:d^{2} \mid n \\ (-1)^{\omega(n)} &amp; otherwise\end{cases}\)</span> ，其中 <span class="math inline">\(\omega(n)\)</span> 表示 <span class="math inline">\(n\)</span> 的本质不同质因子个数，它也是一个积性函数。</p>
+<h2 id="dirichlet-卷积">Dirichlet 卷积</h2>
+<h3 id="定义-1">定义</h3>
+<p>定义两个数论函数 <span class="math inline">\(f,g\)</span> 的 Dirichlet 卷积为</p>
+<p><span class="math display">\[
+(f\ast g)(n)=\sum-{d\mid n}f(d)g(\frac{n}{d})
+\]</span></p>
+<h3 id="性质-1">性质</h3>
+<p>Dirichlet 卷积满足以下运算规律：</p>
+<ul>
+<li>交换律 <span class="math inline">\((f * g=g * f)\)</span> ；</li>
+<li>结合律 <span class="math inline">\((f * g) * h=f * (g * h)\)</span> ；</li>
+<li>分配律 <span class="math inline">\(f * (g+h)=f * g+f * h\)</span> ；</li>
+<li><span class="math inline">\(f*\varepsilon=f\)</span> ，其中 <span class="math inline">\(\varepsilon\)</span> 为 Dirichlet 卷积的单位元（任何函数卷 <span class="math inline">\(\varepsilon\)</span> 都为其本身）</li>
+</ul>
+<h3 id="例子">例子</h3>
+<p><span class="math display">\[
+\begin{aligned}
+\varepsilon=\mu \ast 1&amp;\iff\varepsilon(n)=\sum-{d\mid n}\mu(d)\\
+d=1 \ast 1&amp;\iff d(n)=\sum-{d\mid n}1\\
+\sigma=\operatorname{id} \ast 1&amp;\iff\sigma(n)=\sum-{d\mid n}d\\
+\varphi=\mu \ast \operatorname{id}&amp;\iff\varphi(n)=\sum-{d\mid n}d\cdot\mu(\frac{n}{d})
+\end{aligned}
+\]</span></p>
+<h3 id="莫比乌斯函数">莫比乌斯函数</h3>
+<p>莫比乌斯函数不但是积性函数，还有如下性质：</p>
+<p><span class="math display">\[
+\sum-{d\mid n}\mu(d)=
+\begin{cases}
+1&amp;n=1\\
+0&amp;n\neq 1\\
+\end{cases}
+\]</span></p>
+<p>即 <span class="math inline">\(\sum-{d\mid n}\mu(d)=\varepsilon(n)\)</span> ， <span class="math inline">\(\mu * 1 =\varepsilon\)</span></p>
+<h2 id="莫比乌斯反演">莫比乌斯反演</h2>
+<h3 id="公式">公式</h3>
+<p>设 <span class="math inline">\(f(n),g(n)\)</span> 为两个数论函数。</p>
+<p>如果有 <span class="math inline">\(f(n)=\sum-{d\mid n}g(d)\)</span> ，那么有 <span class="math inline">\(g(n)=\sum-{d\mid n}\mu(d)f(\frac{n}{d})\)</span> 。</p>
+<p>如果有 <span class="math inline">\(f(n)=\sum-{n|d}g(d)\)</span> ，那么有 <span class="math inline">\(g(n)=\sum-{n|d}\mu(\frac{d}{n})f(d)\)</span> 。</p>
+<h3 id="证明">证明</h3>
+<p>方法一：对原式做数论变换。</p>
+<p><span class="math display">\[
+\sum-{d\mid n}\mu(d)f(\frac{n}{d})=\sum-{d\mid n}\mu(d)\sum-{k\mid \frac{n}{d}}g(k)=\sum-{k\mid n}g(k)\sum-{d\mid \frac{n}{k}}\mu(d)=g(n)
+\]</span></p>
+<p>用 <span class="math inline">\(\displaystyle\sum-{d\mid n}g(d)\)</span> 来替换 <span class="math inline">\(f(\dfrac{n}{d})\)</span> ，再变换求和顺序。最后一步变换的依据： <span class="math inline">\(\displaystyle\sum-{d\mid n}\mu(d)=[n=1]\)</span> ，因此在 <span class="math inline">\(\dfrac{n}{k}=1\)</span> 时第二个和式的值才为 <span class="math inline">\(1\)</span> 。此时 <span class="math inline">\(n=k\)</span> ，故原式等价于 <span class="math inline">\(\displaystyle\sum-{k\mid n}[n=k]\cdot g(k)=g(n)\)</span></p>
+<p>方法二：运用卷积。</p>
+<p>原问题为：已知 <span class="math inline">\(f=g\ast1\)</span> ，证明 <span class="math inline">\(g=f\ast\mu\)</span></p>
+<p>易知如下转化： <span class="math inline">\(f\ast\mu=g*1*\mu\implies f\ast\mu=g\)</span> （其中 <span class="math inline">\(1\ast\mu=\varepsilon\)</span> ）。</p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E6%A8%A1%E6%9D%BF/">模板</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E8%8E%AB%E6%AF%94%E4%B9%8C%E6%96%AF%E5%8F%8D%E6%BC%94/">莫比乌斯反演</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2020/08/30/LOJ_528%E3%80%8CLibreOJ_%CE%B2_Round_#4%E3%80%8D%E6%B1%82%E5%92%8C/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">LOJ 528「LibreOJ β Round</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2020/08/30/P6672_%E4%BD%A0%E7%9A%84%E7%94%9F%E5%91%BD%E5%B7%B2%E5%A6%82%E9%A3%8E%E4%B8%AD%E6%AE%8B%E7%83%9B/">
+                        <span class="hidden-mobile">P6672 你的生命已如风中残烛</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments" lazyload>
+                
+                  
+                
+                
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"6pWmvPBsfF99X9VjjKGuwRFv-9Nh9j0Va","appKey":"vP5ctWUBAI0OOI4oMEttkc07","path":"window.location.pathname","placeholder":null,"avatar":"retro","meta":["nick","mail","link"],"requiredFields":[],"pageSize":10,"lang":"zh-CN","highlight":true,"recordIP":false,"serverURLs":"","emojiCDN":null,"emojiMaps":null,"enableQQ":false},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
+          Fluid.plugins.initFancyBox('#valine .vcontent img:not(.vemoji)');
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+  
+
+  
+    <!-- MathJax -->
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        loader: {
+          load: ['ui/lazy']
+        },
+        options: {
+          renderActions: {
+            findScript: [10, doc => {
+              document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+                const display = !!node.type.match(/; *mode=display/);
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                const text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = { node: text, delim: '', n: 0 };
+                math.end = { node: text, delim: '', n: 0 };
+                doc.math.push(math);
+              });
+            }, '', false],
+            insertedScript: [200, () => {
+              document.querySelectorAll('mjx-container').forEach(node => {
+                let target = node.parentNode;
+                if (target.nodeName.toLowerCase() === 'li') {
+                  target.parentNode.classList.add('has-jax');
+                }
+              });
+            }, '', false]
+          }
+        }
+      };
+    </script>
+
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" ></script>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>
